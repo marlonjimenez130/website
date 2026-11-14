@@ -1,0 +1,29 @@
+/* Rootwater Plumbing Co. · repiping: the pipe picker (P6: loaded only on its own page, after site.css and pages.css) */
+/* Pipe picker (repiping): four radio inputs, no JavaScript needed. Picking one dims the other two pipes and notes.
+   Where scroll timelines exist the pipes run out of the tank as the drawing comes into view; otherwise they are drawn. */
+.rp__pick{display:flex;flex-wrap:wrap;gap:4px;width:fit-content;max-width:100%;padding:4px;margin-bottom:18px;border-radius:26px;border:1px solid rgba(244,239,230,.3)}
+.rp__pick label{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:40px;color:var(--mist);font:500 .95rem/1.2 var(--f-label);cursor:pointer;transition:background-color .5s cubic-bezier(.19,1,.22,1),color .5s cubic-bezier(.19,1,.22,1)}
+.rp__pick label:hover{color:var(--cream)}
+@media (max-width:420px){.rp__pick label{padding:0 10px;font-size:.94rem}}
+.rp__pick label:has(:checked){background:var(--cream);color:var(--ink)}
+.rp__pick label:has(:focus-visible){outline:2px solid var(--cream);outline-offset:2px}
+.rp-pipe,.rp svg text,.rp__notes li{transition:opacity .5s cubic-bezier(.19,1,.22,1)}
+.rp__notes{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px;font-size:.95rem;color:var(--mist)}
+.rp__notes li{padding-top:10px;border-top:1px solid var(--line-dark)}
+.rp__notes b{font-weight:600;color:var(--cream)}
+/* dimmed states (P2): pipes .25; labels .6 and notes .7 keep their text at WCAG AA */
+.rp:has([value="pb"]:checked) .rp-pipe:is(.rp-cu,.rp-pex),.rp:has([value="cu"]:checked) .rp-pipe:is(.rp-pb,.rp-pex),.rp:has([value="pex"]:checked) .rp-pipe:is(.rp-pb,.rp-cu){opacity:.25}
+.rp:has([value="pb"]:checked) text:is(.rp-cu,.rp-pex),.rp:has([value="cu"]:checked) text:is(.rp-pb,.rp-pex),.rp:has([value="pex"]:checked) text:is(.rp-pb,.rp-cu){opacity:.6}
+.rp:has([value="pb"]:checked) li:is(.rp-cu,.rp-pex),.rp:has([value="cu"]:checked) li:is(.rp-pb,.rp-pex),.rp:has([value="pex"]:checked) li:is(.rp-pb,.rp-cu){opacity:.7}
+.fig--pipes{view-timeline-name:--rp}
+.rp-pipe,.rp-band{transform-box:fill-box;transform-origin:0 50%}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .rp-band{animation:grow-x linear both;animation-timeline:--rp;animation-range:entry 5% entry 50%}
+    .rp-pipe{animation:grow-x linear both;animation-timeline:--rp;animation-range:entry 30% entry 75%}
+    .rp-pipe.rp-cu{animation-range:entry 40% entry 85%}
+    .rp-pipe.rp-pex{animation-range:entry 50% entry 95%}
+  }
+}
+@keyframes grow-x{from{transform:scaleX(0)}}
+.rp__pick label{position:relative}

@@ -1,0 +1,5 @@
+# No tracking, no cookies. The samples are made-up businesses and carry their own "noindex".
+User-agent: *
+Allow: /
+
+Sitemap: https://marlonjimenez130.github.io/website/sitemap.xml

@@ -1,0 +1,13 @@
+/* Rootwater Plumbing Co. · hard water: county or well (P6: loaded only on its own page, after site.css and pages.css) */
+/* hard water: county or well (two radio inputs, no JavaScript) */
+.hw__toggle{display:inline-flex;gap:4px;padding:4px;margin-bottom:18px;border-radius:40px;border:1px solid rgba(244,239,230,.3)}
+.hw__toggle label{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:40px;color:var(--mist);font:500 .95rem/1.2 var(--f-label);cursor:pointer;transition:background-color .5s cubic-bezier(.19,1,.22,1),color .5s cubic-bezier(.19,1,.22,1)}
+.hw__toggle label:has(:checked){background:var(--cream);color:var(--ink)}
+.hw__toggle label:has(:focus-visible){outline:2px solid var(--cream);outline-offset:2px}
+.hw__county>*,.hw__well{transition:opacity .5s var(--house),transform .5s var(--house)}
+.hw__well{opacity:0;transform:translateX(-14px)}
+.hw:has(#hw-well:checked) .hw__well{opacity:1;transform:none}
+/* Private well dims the county band in the same three steps as the pipe picker (P2): shapes .25, the caption .6 (AA) */
+.hw:has(#hw-well:checked) .hw__county :is(rect,circle){opacity:.25}
+.hw:has(#hw-well:checked) .hw__county text{opacity:.6}
+.hw__toggle label{position:relative}

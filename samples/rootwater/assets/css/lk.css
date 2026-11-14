@@ -1,0 +1,13 @@
+/* Rootwater Plumbing Co. · leak detection: listening to the slab (P6: loaded only on its own page, after site.css and pages.css) */
+/* leak: listening to the slab (scroll-driven where supported) */
+.fig--leak{view-timeline-name:--lk}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .lk-disc{animation:lk-slide linear both;animation-timeline:--lk;animation-range:entry 40% cover 55%}
+    .lk-rings circle{animation:fade-in linear both;animation-timeline:--lk}
+    .lk-r1{animation-range:cover 30% cover 45%!important}.lk-r2{animation-range:cover 38% cover 50%!important}.lk-r3{animation-range:cover 45% cover 55%!important}
+    .lk-bloom{animation:fade-in linear both;animation-timeline:--lk;animation-range:cover 45% cover 58%}
+    .lk-x{transform-box:fill-box;transform-origin:center;animation:pop-in linear both;animation-timeline:--lk;animation-range:cover 55% cover 62%}
+  }
+}
+@keyframes lk-slide{from{transform:translateX(-230px)}}

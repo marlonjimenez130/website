@@ -1,0 +1,37 @@
+/* vfx/grain.css · film grain and soft light. Pure CSS, no JavaScript, no image files.
+   Budget: two composited layers, transform/opacity only; grain steps at 8 frames a second (cheap on phones).
+   Use: <body class="vfx-grain">  and/or  <section class="vfx-softlight" style="--light:#fff3dc">.
+   Static fallback: under reduced motion the grain holds still and the light stops drifting. */
+
+/* Grain: an SVG noise tile (made by the browser from feTurbulence) on a fixed layer that jitters. */
+.vfx-grain::after{
+  content:"";position:fixed;inset:-50%;z-index:80;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:var(--grain,.07);
+  animation:vfx-grain .75s steps(6) infinite;
+}
+.vfx-grain-dark::after{opacity:var(--grain,.05);filter:invert(1)}
+@keyframes vfx-grain{
+  0%{transform:translate3d(0,0,0)}17%{transform:translate3d(-3%,2%,0)}33%{transform:translate3d(2%,-4%,0)}
+  50%{transform:translate3d(-4%,-1%,0)}67%{transform:translate3d(3%,3%,0)}83%{transform:translate3d(-1%,4%,0)}100%{transform:translate3d(0,0,0)}
+}
+
+/* Soft light: a broad, warm window light that drifts across a section over 26 s. */
+.vfx-softlight{position:relative;isolation:isolate;overflow:hidden}
+.vfx-softlight::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;width:120%;aspect-ratio:1;left:-10%;top:-60%;
+  background:radial-gradient(closest-side,var(--light,#fff6e6) 0%,transparent 70%);
+  opacity:var(--light-strength,.9);
+  animation:vfx-drift 26s cubic-bezier(.445,.05,.55,.95) infinite alternate;
+}
+@keyframes vfx-drift{from{transform:translate3d(-14%,0,0) scale(1)}to{transform:translate3d(18%,8%,0) scale(1.12)}}
+
+@media (prefers-reduced-motion:reduce){.vfx-grain::after,.vfx-softlight::before{animation:none}}
+@media print{.vfx-grain::after,.vfx-softlight::before{display:none}}
+
+/* Grain on one section only (dark film chapters): <section class="vfx-grain-in"> (needs position:relative) */
+.vfx-grain-in{position:relative;overflow:hidden}
+.vfx-grain-in::after{content:"";position:absolute;inset:-50%;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:var(--grain,.06);animation:vfx-grain .75s steps(6) infinite}
+@media (prefers-reduced-motion:reduce){.vfx-grain-in::after{animation:none}}

@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Web Studio motion kit · motion.css (pairs with motion.js; no dependencies)
+   Rules: transform and opacity only (clip-path on media frames), every hidden
+   start state lives under .js, and reduced motion shows the resting state.
+   ========================================================================== */
+
+/* 1. Tokens ---------------------------------------------------------------- */
+:root{
+  --ease-settle:cubic-bezier(.19,1,.22,1);    /* expo-out: arrivals, pictures, big moves */
+  --ease-glide:cubic-bezier(.165,.84,.44,1);  /* quart-out: hovers, underlines, small moves */
+  --ease-calm:cubic-bezier(.445,.05,.55,.95); /* sine in-out: colour, background, border */
+  --ease-lift:cubic-bezier(.7,0,.84,0);       /* expo-in: things that leave */
+  --t-tap:.2s;      /* press, colour of small controls */
+  --t-ui:.5s;       /* colour of large controls, panel fades */
+  --t-line:.9s;     /* text lines, reveals */
+  --t-arrive:1.3s;  /* pictures settling, unveils */
+  --t-enter:.7s;    /* page enter */
+  --stagger:90ms;   /* between siblings */
+  --rise:22px;      /* reveal travel; phones use less (below) */
+}
+@media (max-width:760px){:root{--rise:14px;--stagger:70ms}}
+
+/* 2. Page enter + load choreography ----------------------------------------
+   <html class="js"> is set by a one-line head script; motion.js adds .m-ready
+   once fonts are in (max 700 ms). Order with style="--o:0..6".            */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:.35s var(--ease-calm) both m-fade-out}
+::view-transition-new(root){animation:.6s var(--ease-settle) both m-fade-in}
+@keyframes m-fade-out{to{opacity:0}}
+@keyframes m-fade-in{from{opacity:0}}
+.js [data-load]{opacity:0;transform:translate3d(0,var(--rise),0)}
+.js.m-ready [data-load]{animation:m-load var(--t-line) var(--ease-settle) both;animation-delay:calc(120ms + var(--o,0) * var(--stagger) * 1.6)}
+.js [data-load="fade"]{transform:none}
+.js [data-load="media"]{transform:scale(1.06)}
+.js.m-ready [data-load="media"]{animation:m-load-media var(--t-arrive) var(--ease-settle) both;animation-delay:calc(var(--o,0) * var(--stagger))}
+@keyframes m-load{to{opacity:1;transform:none}}
+@keyframes m-load-media{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+
+/* 3. Text-line reveal: [data-lines] on a heading (first screen only) -------- */
+.js [data-lines]:not(.is-split){opacity:0}
+.m-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.m-line>span{display:block;transform:translate3d(0,105%,0);animation:m-line var(--t-line) var(--ease-settle) both;animation-delay:calc(160ms + var(--l,0) * 110ms)}
+@keyframes m-line{to{transform:none}}
+
+/* 4. Scroll reveals ----------------------------------------------------------
+   .m-reveal: one element rises in. [data-stagger] on a parent: its children
+   rise in one after another (motion.js sets --i).                          */
+.js .m-reveal,.js [data-stagger]>*{opacity:0;transform:translate3d(0,var(--rise),0);
+  transition:opacity var(--t-line) var(--ease-settle),transform var(--t-line) var(--ease-settle);transition-delay:calc(var(--i,0) * var(--stagger))}
+.js .m-reveal.is-in,.js [data-stagger].is-in>*{opacity:1;transform:none}
+
+/* 5. Pictures that arrive and frames that unveil ---------------------------
+   .m-arrive: a frame whose picture settles from 1.08 to 1 (our version of the
+   camera push-in). .m-unveil: the frame opens from its bottom edge.        */
+.m-arrive,.m-unveil{overflow:hidden;position:relative}
+.js .m-arrive>img,.js .m-arrive>picture>img,.js .m-arrive>video{opacity:0;transform:scale(1.08);
+  transition:opacity var(--t-ui) var(--ease-calm),transform var(--t-arrive) var(--ease-settle)}
+.js .m-arrive.is-in>img,.js .m-arrive.is-in>picture>img,.js .m-arrive.is-in>video{opacity:1;transform:none}
+.js .m-unveil{clip-path:inset(100% 0 0 0);transition:clip-path var(--t-arrive) var(--ease-settle)}
+.js .m-unveil>*{transform:scale(1.12) translate3d(0,6%,0);transition:transform calc(var(--t-arrive) * 1.25) var(--ease-settle)}
+.js .m-unveil.is-in{clip-path:inset(0 0 0 0)}
+.js .m-unveil.is-in>*{transform:none}
+
+/* 6. Scroll-linked effects ---------------------------------------------------
+   [data-parallax]: drifts with scroll (decorative media only, never text).
+   [data-grow]: a stage that widens from an inset card to full bleed.
+   CSS scroll-driven animations where supported; motion.js sets --p (0..1)
+   everywhere else.                                                          */
+@property --p{syntax:"<number>";inherits:true;initial-value:.5}
+[data-parallax]{--amt:5;transform:translate3d(0,calc((var(--p) - .5) * -2% * var(--amt)),0) scale(calc(1 + var(--amt) * .022))}
+[data-grow]{--inset:6vw;clip-path:inset(0 calc((1 - min(1, var(--p) * 2)) * var(--inset)) round calc((1 - min(1, var(--p) * 2)) * 8px))}
+@supports (animation-timeline:view()){
+  [data-parallax],[data-grow]{animation:m-progress linear both;animation-timeline:view();animation-range:cover}
+  @keyframes m-progress{from{--p:0}to{--p:1}}
+}
+
+/* 7. Pinned chapters: a tall track with a sticky stage; --pin (0..1) and
+   data-step (1..n) drive the content. Without JS the track is normal height. */
+@property --pin{syntax:"<number>";inherits:true;initial-value:0}
+.m-pin{position:relative}
+.js .m-pin{height:calc(var(--steps,3) * 90svh + 100svh)}
+.m-pin__stage{position:relative}
+.js .m-pin__stage{position:sticky;top:0;height:100svh;overflow:hidden}
+.js .m-pin__bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:currentColor;opacity:.5;transform-origin:left;transform:scaleX(var(--pin))}
+@supports (animation-timeline:view()){
+  .js .m-pin{view-timeline-name:--m-pin;animation:m-pin linear both;animation-timeline:--m-pin;animation-range:contain 0% contain 100%}
+  @keyframes m-pin{from{--pin:0}to{--pin:1}}
+}
+
+/* 8. Links, buttons, presses ------------------------------------------------ */
+/* .m-link: the resting underline retracts to the right and a new one draws in from the left (hover and focus).
+   .m-link.q (quiet): no resting underline; it only draws in. --ul-b lifts the line in tall boxes, e.g. a
+   44 px flex link: style="--ul-b:calc(50% - .8em)". */
+.m-link{text-decoration:none;position:relative;--ul-b:0px}
+.m-link::before,.m-link::after{content:"";position:absolute;left:0;right:0;bottom:var(--ul-b);height:1px;background:currentColor;pointer-events:none}
+.m-link::before{transform-origin:right;transition:transform .45s var(--ease-glide) .12s}
+.m-link::after{transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease-glide)}
+.m-link.q::before{transform:scaleX(0)}
+@media (hover:hover){
+  .m-link:hover::before{transform:scaleX(0);transition-delay:0s}
+  .m-link:hover::after{transform:scaleX(1);transition-delay:.12s}
+}
+.m-link:focus-visible::after{transform:scaleX(1)}
+.m-press{transition:transform var(--t-tap) var(--ease-glide),background-color var(--t-ui) var(--ease-settle),color var(--t-ui) var(--ease-settle)}
+@media (hover:hover){.m-press:hover{transform:translate3d(0,1px,0)}}
+.m-press:active{transform:scale(.97);transition-duration:.08s}
+[data-magnetic]{transition:transform .6s var(--ease-settle)}
+
+/* 9. Cursor follower (fine pointers only; the real cursor stays) ------------ */
+.m-follow{position:fixed;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border:1px solid currentColor;border-radius:50%;
+  pointer-events:none;z-index:90;opacity:0;transform:translate3d(var(--fx,-100px),var(--fy,-100px),0) scale(.4);
+  transition:opacity .4s var(--ease-calm),scale .6s var(--ease-settle),width .6s var(--ease-settle);color:#fff;mix-blend-mode:difference}
+.m-follow.is-on{opacity:.9;scale:2.5}
+.m-follow.is-on.is-press{scale:2}
+
+/* 10. Video stage: poster picture first, film fades in when it really plays */
+.m-stage{position:relative;overflow:hidden;background:var(--stage-bg,#1f1f1f)}
+.m-stage>picture,.m-stage>picture img,.m-stage>video{display:block;width:100%;height:100%;object-fit:cover}
+.m-stage>video{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--ease-calm)}
+.m-stage.is-playing>video,.m-stage.is-shown>video{opacity:1}
+.m-stage__toggle{position:absolute;z-index:3;left:var(--toggle-x,16px);bottom:var(--toggle-y,16px);display:inline-flex;align-items:center;gap:10px;min-height:44px;min-width:44px;
+  padding:0 18px 0 15px;border:0;border-radius:40px;background:rgba(255,255,255,.92);color:#1f1f1f;font:inherit;font-size:15px;cursor:pointer;
+  transition:background-color var(--t-ui) var(--ease-settle),transform var(--t-tap) var(--ease-glide)}
+.m-stage__toggle[hidden]{display:none}
+.m-stage__toggle:hover{background:#fff}
+.m-stage__toggle:active{transform:scale(.96)}
+.m-stage__toggle:focus-visible{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 4px #1f1f1f}
+.m-stage__toggle i{display:block;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.m-stage__toggle.is-paused i{width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent currentColor}
+.m-stage__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* 11. Sound toggle (sfx.js) ------------------------------------------------- */
+.m-sound{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;border:0;background:none;color:inherit;font:inherit;cursor:pointer}
+.m-sound svg{width:18px;height:18px}
+.m-sound .on{display:none}.m-sound[aria-pressed="true"] .on{display:inline}.m-sound[aria-pressed="true"] .off{display:none}
+/* Markup: a speaker glyph (aria-hidden) with .on waves and an .off cross, and the visible word "Sound";
+   the state is aria-pressed, so the name never contradicts the state. */
+
+/* 12. Reduced motion: every part rests in its final state -------------------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .js [data-lines]{opacity:1!important}
+  .js [data-load],.js .m-reveal,.js [data-stagger]>*,.js .m-arrive>img,.js .m-arrive>picture>img,.js .m-arrive>video,.js .m-unveil,.js .m-unveil>*,.m-line>span{
+    opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}
+  [data-parallax]{transform:none!important;animation:none!important}
+  [data-grow]{clip-path:none!important;animation:none!important}
+  .m-follow{display:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Frondwright Palm &amp; Garden · Naples, Florida (concept site)</title>
+<meta name="description" content="A concept site for a made-up palm and garden care company in Naples, Florida: palms pruned by the clock, never above nine and three, and gardens kept through the wet and dry seasons.">
+<meta name="theme-color" content="#f4ece0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4ece0'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%231f1f1f' stroke-width='1.5'/%3E%3Cpath d='M5 16H27' stroke='%232f4630' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./fonts/fonts.css">
+<link rel="preload" as="image" href="video/hero-poster.jpg" media="(min-width: 761px)" fetchpriority="high">
+<link rel="preload" as="image" href="video/hero-tall-poster.jpg" media="(max-width: 760px)" fetchpriority="high">
+<link rel="stylesheet" href="kit/motion.css">
+<link rel="stylesheet" href="kit/vfx/grain.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){window.mReady||document.documentElement.classList.remove('js')},3000)</script>
+<script src="kit/motion.js" defer></script>
+<style>
+:root{
+  --white:#fff; --stucco:#f4ece0; --sand:#ebe0cd; --ink:#1f1f1f; --mute:#5e5a52; --line:#d8ccb8; --black:#010101;
+  --palm:#2f4630; --palm-2:#3f5a3c; --frond-old:#7b8740; --frond-dead:#9a7444; --clay:#a65a34;
+  --serif:"Fraunces",Didot,Georgia,serif; --sans:"Alegreya Sans","Gill Sans","Gill Sans MT","Trebuchet MS",sans-serif;
+  --gut:clamp(20px,5.6vw,80px); --head-h:70px; --anchor-offset:78px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+section[id]{scroll-margin-top:var(--anchor-offset)}
+body{background:var(--stucco);color:var(--ink);font-family:var(--serif);font-weight:300;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;font-variation-settings:"opsz" 14,"SOFT" 50}
+a{color:inherit}
+img,svg{display:block;max-width:100%;height:auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:12px 16px;z-index:100;font-family:var(--sans)}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.kick{font-family:var(--sans);font-size:14px;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+.label{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.mute{color:var(--mute)}
+.display{font-weight:300;font-size:clamp(44px,6.8vw,104px);line-height:1.04;letter-spacing:-.03em;font-variation-settings:"opsz" 144,"SOFT" 100}
+.h2{font-weight:300;font-size:clamp(34px,4.3vw,62px);line-height:1.1;letter-spacing:-.025em;font-variation-settings:"opsz" 144,"SOFT" 100}
+em{font-style:italic}
+
+/* frame */
+.strip{position:relative;z-index:31;background:var(--black);color:#fff;text-align:center;padding:0 var(--gut);font-family:var(--sans);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.strip a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:4px 0;text-underline-offset:3px}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:var(--head-h);padding:0 var(--gut);position:sticky;top:0;z-index:30;color:var(--ink);background:rgba(247,241,231,.97);box-shadow:0 1px 0 var(--line)}
+.top a{text-decoration:none}
+.side{display:flex;gap:28px;align-items:center;font-family:var(--sans);font-size:16px}
+.side a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;--ul-b:10px}
+.r{justify-content:flex-end}
+.name{display:flex;align-items:baseline;gap:10px;padding:6px 0}
+.name b{font-family:var(--serif);font-weight:300;font-style:italic;font-size:26px;letter-spacing:-.02em;font-variation-settings:"opsz" 144,"SOFT" 100}
+.name small{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+
+/* controls */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;background:var(--ink);color:#fff;border-radius:2px;text-decoration:none;font-family:var(--serif);font-weight:400;font-size:16px;transition:background-color .5s var(--ease-settle)}
+.btn:hover{background:var(--palm)}
+.tl{font-family:var(--serif);font-weight:400;padding:12px 0;display:inline-block;--ul-b:10px}
+
+/* 1. opening: the palm's shadow on a warm wall */
+.open{position:relative;min-height:calc(100svh - 44px - var(--head-h));display:grid;place-items:center;text-align:center;background:var(--stucco);isolation:isolate}
+.open .m-stage{position:absolute;inset:0;z-index:-1;--stage-bg:#efdfc2}
+.open .copy{padding:60px var(--gut) 110px;max-width:1100px}
+.open h1{max-width:12ch;margin:20px auto 0}
+.open p.sub{max-width:30em;margin:24px auto 0;font-size:clamp(18px,1.5vw,21px);color:#2b2822}
+.open .acts{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;align-items:center}
+.open .m-stage__toggle{--toggle-x:var(--gut);--toggle-y:24px}
+
+/* 2. signature: the clock we prune by */
+.clock{padding:clamp(80px,10vw,150px) var(--gut);background:var(--white)}
+.clock .in{max-width:1300px;margin:0 auto;display:grid;gap:clamp(36px,5vw,100px);align-items:center}
+@media (min-width:980px){.clock .in{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-areas:"dial say" "dial ctrl";row-gap:0;align-items:end}.clock .dialbox{grid-area:dial;align-self:center}.clock .say{grid-area:say}.clock .ctrl{grid-area:ctrl;align-self:start}}
+.dial{background:var(--stucco);border-radius:8px;aspect-ratio:1/1;display:grid;place-items:center;padding:4%}
+.dial svg{width:100%;height:100%}
+.dial .ring{fill:none;stroke:#bfae92;stroke-width:1}
+.dial .tick{stroke:#8d7f69;stroke-width:1.5}
+.dial .num{font-family:var(--sans);font-size:17px;letter-spacing:.08em;fill:#5e5a52;text-anchor:middle;dominant-baseline:middle}
+.dial .trunk{fill:#9a8a6e}
+.dial .scar{stroke:#7d6f57;stroke-width:2}
+.f{transform-box:view-box;transition:opacity .9s var(--ease-calm),transform 1.3s var(--ease-settle)}
+.f use{fill:var(--palm)}
+.f.old use{fill:var(--frond-old)}
+.f.dead use{fill:var(--frond-dead)}
+.f .sp{fill:none;stroke-width:1.1}
+.guide{stroke:var(--clay);stroke-width:1.5;stroke-dasharray:5 6;fill:none;opacity:0;transition:opacity .6s var(--ease-calm)}
+.clock .say .h2{margin-top:14px;max-width:14ch}
+.clock .say p.lede{margin-top:18px;font-size:clamp(18px,1.5vw,21px);max-width:30em}
+fieldset.cut{border:0;margin-top:30px}
+@media (max-width:979px){fieldset.cut{margin-top:0}.clock .say{order:-1}}
+fieldset.cut legend{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-radius:2px}
+.seg label{position:relative;display:grid;place-items:center;text-align:center;min-height:52px;padding:8px 10px;cursor:pointer;font-family:var(--serif);font-weight:400;font-size:16px;line-height:1.2;transition:background-color .5s var(--ease-settle),color .5s var(--ease-settle)}
+.seg label+label{border-left:1px solid var(--ink)}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg label:has(input:checked){background:var(--ink);color:#fff}
+.seg label:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:3px}
+.why{margin-top:18px;border-top:1px solid var(--line)}
+.why p{padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.why p b{display:block;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.why p.no b{color:#8a3f1c}
+/* the clock is driven by the radio buttons alone (CSS :has), so it works without JavaScript */
+.clock:has(#cut-dead:checked) .f.dead,
+.clock:has(#cut-93:checked) .f.lo,
+.clock:has(#cut-hur:checked) .f:not(.crown){opacity:0;transform:translateY(26px)}
+.clock:has(#cut-93:checked) .g93,.clock:has(#cut-hur:checked) .ghur{opacity:1}
+.clock:has(#cut-hur:checked) .f.crown use{fill:#55693f}
+.clock:has(.seg input) .why p{display:none}
+.clock:has(#cut-dead:checked) .why p.dead,.clock:has(#cut-93:checked) .why p.n93,.clock:has(#cut-hur:checked) .why p.no{display:block}
+.dial-note{margin-top:12px;font-family:var(--sans);font-size:14px;color:var(--mute);text-align:center}
+
+/* 3. two seasons */
+.seasons{padding:clamp(80px,10vw,150px) var(--gut)}
+.seasons .head{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px}
+.seasons .head .h2{max-width:13ch}
+.seasons .head p{max-width:30em}
+.year{max-width:1200px;margin:clamp(34px,4vw,56px) auto 0;display:grid;grid-template-columns:repeat(12,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.year span{font-family:var(--sans);font-size:14px;letter-spacing:.06em;text-align:center;padding:14px 0;border-left:1px solid var(--line)}
+.year span:first-child{border-left:0}
+.year span.w{background:var(--palm);color:#fff;border-left-color:#4b6247}
+.year span.ws,.year span.we{background:linear-gradient(to right,transparent 50%,var(--palm) 50%) bottom/100% 6px no-repeat}.year span.we{background-image:linear-gradient(to right,var(--palm) 50%,transparent 50%)}
+.two{max-width:1200px;margin:clamp(30px,4vw,50px) auto 0;display:grid;gap:30px 80px}
+@media (min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.two h3{font-weight:300;font-style:italic;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:-.03em;font-variation-settings:"opsz" 144,"SOFT" 100}
+.two h3 small{display:block;font-style:normal;font-family:var(--sans);font-size:14px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;margin-top:12px;color:var(--mute)}
+.two ul{list-style:none;margin-top:20px;border-top:1px solid var(--line)}
+.two li{padding:12px 0;border-bottom:1px solid var(--line);font-size:17.5px}
+
+/* 4. the services */
+.svc{background:var(--white);padding:clamp(80px,10vw,150px) var(--gut)}
+.svc .in{max-width:1100px;margin:0 auto}
+.svc .head{text-align:center;margin-bottom:clamp(30px,4vw,54px)}
+.svc .head .h2{margin-top:14px}
+.acc{border-top:1px solid var(--ink)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3em 1fr auto;align-items:center;gap:12px;min-height:72px;font-weight:300;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.015em;font-variation-settings:"opsz" 144,"SOFT" 100}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary span{font-family:var(--sans);font-size:14px;letter-spacing:.1em;color:var(--mute)}
+.acc summary::after{content:"";width:10px;height:10px;border-right:1.3px solid var(--ink);border-bottom:1.3px solid var(--ink);transform:rotate(45deg);transition:transform .5s var(--ease-settle);margin-right:6px}
+.acc details[open] summary::after{transform:rotate(-135deg)}
+.acc .body{padding:0 0 26px 3.75em;display:grid;gap:8px 40px;font-size:17.5px}
+@media (min-width:760px){.acc .body{grid-template-columns:1.4fr 1fr}}
+.acc .body dl{font-family:var(--sans);font-size:15.5px}
+.acc .body dl div{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid #eee5d6}
+.acc .body dt{color:var(--mute)}
+:root{interpolate-size:allow-keywords}
+.acc details::details-content{block-size:0;overflow:hidden;transition:block-size .5s var(--ease-settle),content-visibility .5s allow-discrete}
+.acc details[open]::details-content{block-size:auto}
+
+/* 5. the garden (footage slot) */
+.garden{padding:clamp(80px,10vw,150px) 0 0}
+.garden .say{text-align:center;padding:0 var(--gut);max-width:1000px;margin:0 auto}
+.garden .say p.h2{margin-top:16px;text-wrap:balance}
+.garden figure{margin-top:clamp(40px,5vw,72px);aspect-ratio:16/8;--stage-bg:#e9dcc4}
+.garden .fcap{padding:12px var(--gut) 0;font-family:var(--sans);font-size:14px;color:var(--mute);text-align:center}
+
+/* 6. call */
+.call{padding:clamp(90px,11vw,170px) var(--gut);text-align:center;position:relative;isolation:isolate}
+.call .h2{margin:16px auto 0;max-width:15ch}
+.call .num{margin-top:28px;font-weight:300;font-size:clamp(36px,5.4vw,76px);line-height:1.1;letter-spacing:-.02em;font-variation-settings:"opsz" 144,"SOFT" 100}
+.call .meta{margin-top:14px;font-family:var(--sans);font-size:16px;color:var(--mute)}
+
+/* footer */
+.foot{background:var(--black);color:#fff;padding:clamp(64px,8vw,110px) var(--gut) 36px}
+.foot .k{color:#bdbdbd}
+.foot .big{display:inline-block;padding:4px 0 12px;font-weight:300;font-style:italic;font-size:clamp(34px,5vw,72px);line-height:1.1;letter-spacing:-.025em;margin-top:14px;font-variation-settings:"opsz" 144,"SOFT" 100}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 28px;margin-top:26px;font-size:19px}
+.foot nav a{display:inline-flex;min-height:44px;align-items:center;--ul-b:8px}
+.foot .sample{margin-top:44px;max-width:60ch;color:#cfcfcf;font-size:16px}
+.foot .legal{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;margin-top:clamp(48px,6vw,90px);color:#9a9a9a;font-family:var(--sans);font-size:14px}
+
+.bar{display:none}
+@media (max-width:760px){
+  :root{--head-h:62px;--anchor-offset:70px}
+  .top{grid-template-columns:1fr auto}
+  .top .l{display:none}
+  .name b{font-size:23px}
+  .name small{display:none}
+  .strip .lg{display:none}
+  .open{min-height:calc(100svh - 44px - var(--head-h) - 72px)}
+  .open .copy{padding:40px var(--gut) 90px}
+  .open .acts .btn{width:100%}
+  .seg label{font-size:15px;min-height:56px}
+  .year span{font-size:11.5px;letter-spacing:0;writing-mode:vertical-rl;transform:rotate(180deg);padding:12px 0;display:grid;place-items:center}
+  .year span.ws{background-image:linear-gradient(to right,var(--palm) 50%,transparent 50%);background-position:top}.year span.we{background-image:linear-gradient(to right,transparent 50%,var(--palm) 50%);background-position:top}
+  .acc .body{padding-left:0}
+  .garden figure{aspect-ratio:4/3}
+  .bar{display:block;position:sticky;bottom:0;z-index:20;background:var(--stucco);border-top:1px solid var(--line);padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom))}
+  .bar .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.f,.guide,.seg label,.acc summary::after{transition:none}.acc details::details-content{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip"><a href="#about-sample">Concept site<span class="lg"> · a sample by Marlon Jimenez</span> · the business is made up</a></div>
+<header class="top">
+  <nav class="side l" aria-label="Sections"><a class="m-link q" href="#clock">The clock</a><a class="m-link q" href="#seasons">Seasons</a><a class="m-link q" href="#services">Services</a></nav>
+  <a class="name" href="#main" aria-label="Frondwright Palm and Garden, back to the top"><b>Frondwright</b><small>Palm &amp; Garden</small></a>
+  <nav class="side r" aria-label="Contact"><a class="m-link q" href="#call">Call [phone]</a></nav>
+</header>
+
+<main id="main">
+  <section class="open" aria-labelledby="h1">
+    <figure class="m-stage" data-name="opening film" data-dwell="0">
+      <picture>
+        <source media="(max-width: 760px)" srcset="video/hero-tall-poster.jpg" width="720" height="1280">
+        <img src="video/hero-poster.jpg" srcset="video/hero-poster-960.jpg 960w, video/hero-poster.jpg 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
+      </picture>
+      <video muted loop playsinline preload="none" width="1920" height="1080" aria-label="An animation made for this page: soft shadows of palm fronds sway across a sunlit stucco wall in a light breeze.">
+        <source src="video/hero-tall.mp4" type="video/mp4" media="(max-width: 760px)">
+        <source src="video/hero.mp4" type="video/mp4">
+      </video>
+      <button class="m-stage__toggle" type="button" hidden><i aria-hidden="true"></i><span class="t">Pause</span><span class="m-stage__sr"> the opening film</span></button>
+    </figure>
+    <div class="copy">
+      <p class="kick" data-load style="--o:1">Palm and garden care · Naples, Florida</p>
+      <h1 id="h1" class="display" data-lines>Palms pruned by the <em>clock</em>.</h1>
+      <p class="sub" data-load style="--o:4">We take off dead fronds, and never cut above nine and three. We keep the rest of your garden shaped, fed and ready for storm season.</p>
+      <div class="acts" data-load style="--o:5">
+        <a class="btn m-press" href="#call" data-magnetic="6">Book a garden walk</a>
+        <a class="tl m-link" href="#clock">See the clock</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="clock" id="clock" aria-labelledby="clock-h">
+    <div class="in">
+      <div class="dialbox m-reveal">
+        <div class="dial">
+          <svg viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+            <defs>
+              <g id="fr"><path stroke="none" d="M9.1 0.2Q15.6 -1.5 17.6 -7.3ZM9.1 0.2Q10.6 7.9 16.9 12.0ZM13.6 0.4Q21.4 -2.4 24.7 -9.1ZM13.6 0.4Q16.1 9.9 23.4 15.8ZM18.2 0.6Q26.9 -2.9 31.3 -10.4ZM18.2 0.6Q21.3 11.6 29.2 19.2ZM22.7 1.0Q32.3 -3.1 37.5 -11.3ZM22.7 1.0Q26.2 13.2 34.6 22.1ZM27.3 1.4Q37.5 -3.1 43.4 -11.7ZM27.3 1.4Q30.9 14.6 39.6 24.5ZM31.8 1.9Q42.5 -2.8 49.0 -11.8ZM31.8 1.9Q35.5 15.8 44.3 26.6ZM36.4 2.5Q47.4 -2.3 54.2 -11.4ZM36.4 2.5Q39.9 16.9 48.6 28.3ZM40.9 3.2Q52.1 -1.6 59.0 -10.8ZM40.9 3.2Q44.1 17.8 52.7 29.5ZM45.5 4.0Q56.6 -0.7 63.6 -9.8ZM45.5 4.0Q48.3 18.5 56.6 30.4ZM50.0 4.8Q61.0 0.4 67.8 -8.4ZM50.0 4.8Q52.4 19.1 60.3 30.9ZM54.5 5.7Q65.2 1.6 71.8 -6.9ZM54.5 5.7Q56.4 19.5 63.8 31.0ZM59.1 6.7Q69.3 3.1 75.4 -5.0ZM59.1 6.7Q60.4 19.8 67.3 30.7ZM63.6 7.8Q73.2 4.7 78.8 -2.9ZM63.6 7.8Q64.4 20.0 70.7 30.1ZM68.2 8.9Q77.1 6.4 81.9 -0.6ZM68.2 8.9Q68.3 20.0 74.1 29.2ZM72.7 10.2Q80.7 8.3 84.8 2.0ZM72.7 10.2Q72.3 20.0 77.5 27.9ZM77.3 11.5Q84.3 10.4 87.4 4.7ZM77.3 11.5Q76.2 19.8 80.9 26.4ZM81.8 12.9Q87.7 12.6 89.7 7.7ZM81.8 12.9Q80.2 19.5 84.4 24.5ZM86.4 14.4Q91.0 14.9 91.7 10.9ZM86.4 14.4Q84.2 19.0 87.9 22.2ZM90.9 15.9Q93.9 17.5 93.0 14.6ZM90.9 15.9Q88.2 18.1 91.5 19.0ZM95.5 17.5Q97.4 19.9 95.5 17.5ZM95.5 17.5Q92.5 18.1 95.5 17.5Z"/><path fill="none" stroke-width="1.3" d="M0,0L4.5,0.0L9.1,0.2L13.6,0.4L18.2,0.6L22.7,1.0L27.3,1.4L31.8,1.9L36.4,2.5L40.9,3.2L45.5,4.0L50.0,4.8L54.5,5.7L59.1,6.7L63.6,7.8L68.2,8.9L72.7,10.2L77.3,11.5L81.8,12.9L86.4,14.4L90.9,15.9L95.5,17.5L100.0,19.3"/></g>
+            </defs>
+            <circle class="ring" cx="300" cy="270" r="250"/>
+            <line class="tick" x1="300.0" y1="42.0" x2="300.0" y2="20.0"/>
+            <line class="tick" x1="418.0" y1="65.6" x2="425.0" y2="53.5"/>
+            <line class="tick" x1="504.4" y1="152.0" x2="516.5" y2="145.0"/>
+            <line class="tick" x1="528.0" y1="270.0" x2="550.0" y2="270.0"/>
+            <line class="tick" x1="504.4" y1="388.0" x2="516.5" y2="395.0"/>
+            <line class="tick" x1="418.0" y1="474.4" x2="425.0" y2="486.5"/>
+            <line class="tick" x1="300.0" y1="498.0" x2="300.0" y2="520.0"/>
+            <line class="tick" x1="182.0" y1="474.4" x2="175.0" y2="486.5"/>
+            <line class="tick" x1="95.6" y1="388.0" x2="83.5" y2="395.0"/>
+            <line class="tick" x1="72.0" y1="270.0" x2="50.0" y2="270.0"/>
+            <line class="tick" x1="95.6" y1="152.0" x2="83.5" y2="145.0"/>
+            <line class="tick" x1="182.0" y1="65.6" x2="175.0" y2="53.5"/>
+            <text class="num" x="300" y="6">XII</text><text class="num" x="576" y="270">III</text><text class="num" x="24" y="270">IX</text>
+            <rect class="trunk" x="288" y="270" width="24" height="330"/>
+            <line class="scar" x1="288" x2="312" y1="300" y2="304"/><line class="scar" x1="288" x2="312" y1="326" y2="330"/><line class="scar" x1="288" x2="312" y1="352" y2="356"/><line class="scar" x1="288" x2="312" y1="378" y2="382"/><line class="scar" x1="288" x2="312" y1="404" y2="408"/><line class="scar" x1="288" x2="312" y1="430" y2="434"/><line class="scar" x1="288" x2="312" y1="456" y2="460"/><line class="scar" x1="288" x2="312" y1="482" y2="486"/><line class="scar" x1="288" x2="312" y1="508" y2="512"/><line class="scar" x1="288" x2="312" y1="534" y2="538"/><line class="scar" x1="288" x2="312" y1="560" y2="564"/><line class="scar" x1="288" x2="312" y1="586" y2="590"/>
+            <g class="f lo dead"><use href="#fr" fill="#9a7444" stroke="#9a7444" transform="translate(300 270) rotate(67.5) scale(2.05 2.05)"/></g>
+            <g class="f lo dead"><use href="#fr" fill="#9a7444" stroke="#9a7444" transform="translate(300 270) rotate(90.0) scale(2.05 2.05)"/></g>
+            <g class="f lo dead"><use href="#fr" fill="#9a7444" stroke="#9a7444" transform="translate(300 270) rotate(112.5) scale(2.05 -2.05)"/></g>
+            <g class="f lo"><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(22.5) scale(2.3 2.3)"/></g>
+            <g class="f lo old"><use href="#fr" fill="#7b8740" stroke="#7b8740" transform="translate(300 270) rotate(45.0) scale(2.3 2.3)"/></g>
+            <g class="f lo old"><use href="#fr" fill="#7b8740" stroke="#7b8740" transform="translate(300 270) rotate(135.0) scale(2.3 -2.3)"/></g>
+            <g class="f lo"><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(157.5) scale(2.3 -2.3)"/></g>
+            <g class="f "><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(0.0) scale(2.3 2.3)"/></g>
+            <g class="f "><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(180.0) scale(2.3 -2.3)"/></g>
+            <g class="f "><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(202.5) scale(2.3 -2.3)"/></g>
+            <g class="f "><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(225.0) scale(2.3 -2.3)"/></g>
+            <g class="f "><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(315.0) scale(2.3 2.3)"/></g>
+            <g class="f "><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(337.5) scale(2.3 2.3)"/></g>
+            <g class="f crown"><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(247.5) scale(1.9 -1.9)"/></g>
+            <g class="f crown"><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(270.0) scale(1.7 1.7)"/></g>
+            <g class="f crown"><use href="#fr" fill="#2f4630" stroke="#2f4630" transform="translate(300 270) rotate(292.5) scale(1.9 1.9)"/></g>
+            <path class="guide g93" d="M40 270 H560"/>
+            <path class="guide ghur" d="M175 53.5 L300 270 L425 53.5"/>
+            <circle cx="300" cy="270" r="9" fill="#6e6250"/>
+          </svg>
+        </div>
+        <p class="dial-note">A drawing made for this page: a palm seen from the front, with a clock face around it.</p>
+      </div>
+      <div class="say m-reveal">
+        <p class="kick">The clock we prune by</p>
+        <h2 id="clock-h" class="h2">Never above <em>nine</em> and <em>three</em></h2>
+        <p class="lede">Picture a clock face around the crown. A palm feeds itself through its green fronds, so the more of the clock you cut, the less it has to live on.</p>
+      </div>
+      <div class="ctrl m-reveal">
+        <fieldset class="cut">
+          <legend>How much to cut</legend>
+          <div class="seg">
+            <label><input type="radio" name="cut" id="cut-dead" value="dead" checked aria-describedby="why-dead">Dead fronds only</label>
+            <label><input type="radio" name="cut" id="cut-93" value="93" aria-describedby="why-93">Nine to three</label>
+            <label><input type="radio" name="cut" id="cut-hur" value="hur" aria-describedby="why-hur">The “hurricane cut”</label>
+          </div>
+        </fieldset>
+        <div class="why">
+          <p class="dead" id="why-dead"><b>Dead fronds only · a normal visit</b>Brown fronds and spent flower and fruit stalks come off; the green crown stays whole.</p>
+          <p class="n93" id="why-93"><b>Nine to three · the limit, not the aim</b>On a normal visit only brown fronds and spent flower or fruit stalks come off. A green frond is cut only if it is a hazard or touches the house, and never above the line from nine to three.</p>
+          <p class="no" id="why-hur"><b>The hurricane cut · what we won’t do</b>Stripping a palm to a few upright fronds takes away the leaves it feeds on. It can leave the tree weaker, not safer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seasons" id="seasons" aria-labelledby="seasons-h">
+    <div class="head m-reveal">
+      <h2 id="seasons-h" class="h2">A Naples garden has two seasons</h2>
+      <p>Most of the rain falls from mid-May to mid-October. The work changes with it, so the visits do too.</p>
+    </div>
+    <div class="year m-reveal" aria-hidden="true"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span class="ws">May</span><span class="w">Jun</span><span class="w">Jul</span><span class="w">Aug</span><span class="w">Sep</span><span class="we">Oct</span><span>Nov</span><span>Dec</span></div>
+    <div class="two">
+      <div class="m-reveal">
+        <h3>Wet<small>mid-May to mid-October</small></h3>
+        <ul>
+          <li>Dead fronds and spent stalks removed before storm season; we don’t strip palms for storms</li>
+          <li>Hedges kept back from roofs, screens and walkways</li>
+          <li>Drains and low beds watched after heavy rain</li>
+          <li>A clean-up visit after a storm, when it’s safe</li>
+        </ul>
+      </div>
+      <div class="m-reveal">
+        <h3>Dry<small>mid-October to mid-May</small></h3>
+        <ul>
+          <li>Palm feeding on a schedule set for your trees</li>
+          <li>Beds weeded, edged and mulched</li>
+          <li>Irrigation looked over, so plants get what they need</li>
+          <li>New planting, while the weather is kind to it</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="services" aria-labelledby="svc-h">
+    <div class="in">
+      <div class="head m-reveal"><p class="kick">Services</p><h2 id="svc-h" class="h2">What a visit can cover</h2></div>
+      <div class="acc m-reveal">
+        <details open><summary><span>01</span>Palm pruning</summary><div class="body"><p>Dead fronds and spent flower and fruit stalks removed, never above nine and three. Tall palms by [method, for example a lift].</p><dl><div><dt>From</dt><dd>[price per palm]</dd></div><div><dt>How often</dt><dd>[schedule]</dd></div></dl></div></details>
+        <details><summary><span>02</span>Palm feeding</summary><div class="body"><p>A palm fertiliser on a set schedule, with the brand and amounts written on your visit note.</p><dl><div><dt>From</dt><dd>[price per visit]</dd></div><div><dt>How often</dt><dd>[schedule]</dd></div></dl></div></details>
+        <details><summary><span>03</span>Hedges and shrubs</summary><div class="body"><p>Shaped by hand shears or trimmer, kept off the house, the lanai screen and the walkways.</p><dl><div><dt>From</dt><dd>[price]</dd></div></dl></div></details>
+        <details><summary><span>04</span>Beds and mulch</summary><div class="body"><p>Weeding, edging and a fresh layer of mulch, kept clear of trunks and stems.</p><dl><div><dt>From</dt><dd>[price]</dd></div></dl></div></details>
+        <details><summary><span>05</span>Storm prep and clean-up</summary><div class="body"><p>Before: dead fronds, spent stalks and coconuts down; we don’t strip palms for storms. After: branches and debris cleared when it’s safe.</p><dl><div><dt>From</dt><dd>[price]</dd></div></dl></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="garden" aria-labelledby="garden-h">
+    <div class="say m-reveal">
+      <h2 id="garden-h" class="kick">The garden walk</h2>
+      <p class="h2">Before any work, we walk the garden with you and write down what each palm and bed needs.</p>
+    </div>
+    <!-- FOOTAGE SLOT F1 (16:8 wide, render 1920x960 or 1920x1080 cropped to centre; plus a 1440x1080 (4:3) phone crop;
+         8 to 10 s seamless loop): the owner's own slow footage of a finished garden in morning light, for example a
+         path between clipped hedges, or palm fronds moving against a clear sky. Only gardens the owner has permission
+         to film; no faces, no house numbers, no street signs. ≤ 1.2 MB, H.264, muted. To add it: put <video muted loop
+         playsinline preload="none" width="1920" height="1080" aria-label="…what it shows…"><source src="video/slot.mp4"
+         type="video/mp4"></video> and a Pause/Play button (copy the one from the opening film) inside this figure, and remove aria-hidden. -->
+    <figure class="m-stage m-unveil" data-slot="f1" data-name="film" aria-hidden="true">
+      <picture><img src="video/slot-poster.jpg" srcset="video/slot-poster-960.jpg 960w, video/slot-poster.jpg 1920w" sizes="100vw" width="1920" height="1080" alt="" loading="lazy" decoding="async" data-parallax style="--amt:3"></picture>
+    </figure>
+    <p class="fcap m-reveal">A drawing made for this page, standing in for footage of a real garden.</p>
+  </section>
+
+  <section class="call vfx-softlight" id="call" aria-labelledby="call-h" style="--light:#fff6e4">
+    <p class="kick m-reveal">Book a garden walk</p>
+    <h2 id="call-h" class="h2 m-reveal">Tell us how many palms, and where the garden is.</h2>
+    <p class="num m-reveal">[phone]</p>
+    <p class="meta m-reveal">[hours] · or email [email address]</p>
+    <p class="meta m-reveal">This is a concept site: the number above is a placeholder, so nothing here dials yet.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="kick k">Frondwright Palm &amp; Garden</p>
+  <a class="big m-link" href="#call">Book a garden walk</a>
+  <nav aria-label="Footer"><a class="m-link" href="#clock">The clock</a><a class="m-link" href="#seasons">Seasons</a><a class="m-link" href="#services">Services</a></nav>
+  <p class="sample" id="about-sample">A concept site. Frondwright Palm &amp; Garden is a made-up business, and this page is a sample made by Marlon Jimenez, web designer in Naples, Florida, to show his work. The phone, prices, schedules and hours are placeholders. The pictures and the film are drawings made for this page. The care advice on this page follows UF/IFAS guidance; a real business must confirm it.</p>
+  <div class="legal"><span>Concept site · © 2026 Marlon Jimenez</span><span>This page sets no cookies of its own and has no analytics. Its fonts are stored with the page.</span></div>
+</footer>
+<div class="bar"><a class="btn m-press" href="#call">Book a garden walk</a></div>
+</body>
+</html>

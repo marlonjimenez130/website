@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Shoalbright Boat Care · Naples, Florida (concept site)</title>
+<meta name="description" content="A concept site for a made-up boat detailer in Naples, Florida: wash, compound, polish and protect, at your dock or slip.">
+<meta name="theme-color" content="#f6f7f6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f7f6'/%3E%3Crect y='17' width='32' height='15' fill='%2310273f'/%3E%3Crect y='16' width='32' height='1.5' fill='%231f1f1f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./fonts/fonts.css">
+<link rel="preload" as="image" href="video/hero-poster.jpg" media="(min-width: 761px)" fetchpriority="high">
+<link rel="preload" as="image" href="video/hero-tall-poster.jpg" media="(max-width: 760px)" fetchpriority="high">
+<link rel="stylesheet" href="kit/motion.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){window.mReady||document.documentElement.classList.remove('js')},3000)</script>
+<script src="kit/motion.js" defer></script>
+<style>
+:root{
+  --white:#fff; --gel:#f7f8f7; --mist:#eef2f2; --ink:#1f1f1f; --mute:#5f6467; --line:#d6dcde; --black:#010101;
+  --navy:#10273f; --navy-2:#0a1b2d; --sea:#24606b; --foam:#cfe6e8;
+  --serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif; --sans:Jost,"Gill Sans","Gill Sans MT","Trebuchet MS",sans-serif;
+  --gut:clamp(20px,5.6vw,80px); --head-h:72px; --anchor-offset:80px;
+  --t-line:.8s; --rise:18px; --stagger:80ms; /* confident motion personality */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+section[id]{scroll-margin-top:var(--anchor-offset)}
+body{background:var(--white);color:var(--ink);font-family:var(--serif);font-weight:400;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;font-variation-settings:"opsz" 11}
+a{color:inherit}
+img,svg{display:block;max-width:100%;height:auto}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:12px 16px;z-index:100;font-family:var(--sans)}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.kick{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.label{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.cap{font-family:var(--sans);font-size:14.5px;letter-spacing:.01em}
+.mute{color:var(--mute)}
+.display{font-weight:400;font-size:clamp(44px,7vw,108px);line-height:1.02;letter-spacing:-.03em;font-variation-settings:"opsz" 96}
+.h2{font-weight:400;font-size:clamp(34px,4.4vw,64px);line-height:1.08;letter-spacing:-.025em;font-variation-settings:"opsz" 96}
+em{font-style:italic}
+
+/* frame */
+.strip{position:relative;z-index:31;background:var(--black);color:#fff;text-align:center;padding:0 var(--gut);font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.strip a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:4px 0;text-underline-offset:3px}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:var(--head-h);padding:0 var(--gut);position:sticky;top:0;z-index:30;color:var(--ink);background:rgba(255,255,255,.96);box-shadow:0 1px 0 var(--line)}
+.top a{text-decoration:none}
+.side{display:flex;gap:28px;align-items:center;font-family:var(--sans);font-size:15px}
+.side a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;--ul-b:10px}
+.r{justify-content:flex-end}
+.name{display:flex;flex-direction:column;align-items:center;line-height:1;padding:6px 0}
+.name b{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.2em;text-transform:uppercase;margin-right:-.2em;font-variation-settings:"opsz" 96}
+.name small{font-family:var(--sans);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;margin-top:6px;color:var(--mute)}
+
+/* controls */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;background:var(--ink);color:#fff;border-radius:2px;text-decoration:none;font-family:var(--serif);font-size:16px;transition:background-color .5s var(--ease-settle)}
+.btn:hover{background:#3d4448}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.light:hover{background:var(--mist)}
+.tl{font-family:var(--serif);padding:12px 0;display:inline-block;--ul-b:10px}
+
+/* 1. opening: pale sky above, the hull below; ink words in the sky */
+.open{position:relative;min-height:calc(100svh - 44px - var(--head-h));display:grid;align-items:start;justify-items:center;text-align:center;background:var(--gel);isolation:isolate}
+.open .m-stage{position:absolute;inset:0;z-index:-1;--stage-bg:var(--gel)}
+.open .m-stage>picture img,.open .m-stage>video{object-position:50% 100%}
+.open .copy{padding:clamp(40px,7vh,84px) var(--gut) 0;max-width:1240px}
+.open h1{margin:16px auto 0;font-size:clamp(44px,6.4vw,96px)}
+.open p.sub{max-width:30em;margin:22px auto 0;font-size:clamp(17px,1.4vw,20px);color:#2a2f33}
+.open .acts{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;align-items:center}
+.open .m-stage__toggle{--toggle-x:var(--gut);--toggle-y:24px}
+
+/* 2. signature: buff the hull */
+.polish{padding:clamp(80px,10vw,150px) var(--gut) clamp(60px,7vw,110px);max-width:1440px;margin:0 auto}
+.polish .head{display:grid;gap:14px;max-width:40em;margin:0 auto clamp(30px,4vw,54px);text-align:center}
+.polish .head p{font-size:clamp(17px,1.4vw,20px);color:#3b4044}
+.hull{position:relative;border-radius:0;overflow:hidden;aspect-ratio:16/7;background:var(--navy);touch-action:pan-y;cursor:ew-resize;--v:50}
+.hull svg{position:absolute;inset:0;width:100%;height:100%}
+.hull .chalk{clip-path:inset(0 0 0 calc(var(--v) * 1%))}
+.hull .edge{position:absolute;top:0;bottom:0;left:calc(var(--v) * 1%);width:2px;margin-left:-1px;background:#fff;opacity:.85;pointer-events:none}
+.hull .edge::before{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;border-radius:50%;border:1.5px solid #fff;background:rgba(16,39,63,.35)}
+.hull .tag{position:absolute;top:16px;font-family:var(--sans);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;background:rgba(255,255,255,.92);color:var(--ink)}
+.hull .tag.l{left:16px}.hull .tag.r{right:16px}
+.control{display:grid;gap:10px;max-width:760px;margin:26px auto 0}
+.control label{font-family:var(--sans);font-size:14.5px;display:flex;justify-content:space-between;gap:12px}
+.control output{font-variant-numeric:tabular-nums;color:var(--mute)}
+.control input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer}
+.control input[type=range]::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--ink) calc(var(--v) * 1%),#b9c1c4 0)}
+.control input[type=range]::-moz-range-track{height:2px;background:#b9c1c4}
+.control input[type=range]::-moz-range-progress{height:2px;background:var(--ink)}
+.control input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-11px;border-radius:50%;background:var(--ink);border:3px solid #fff;box-shadow:0 0 0 1px var(--ink)}
+.control input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--ink);border:3px solid #fff;box-shadow:0 0 0 1px var(--ink)}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:8px}
+.stages p{padding:14px 12px 0 0;font-size:16px;color:var(--mute);box-shadow:inset 0 2px 0 transparent;transition:color .5s var(--ease-calm),box-shadow .5s var(--ease-calm)}
+.stages p b{display:block;font-family:var(--sans);font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.stages p.on{color:var(--ink);box-shadow:inset 0 2px 0 var(--ink)}
+html:not(.js) .control{display:none}
+html:not(.js) .stages p{color:var(--ink)}
+.polish .note{text-align:center;margin-top:22px;font-family:var(--sans);font-size:13.5px;color:var(--mute)}
+
+/* 3. the waterline: one sentence, cut in two by the line */
+.wline{position:relative;min-height:clamp(440px,76svh,780px);display:grid;background:linear-gradient(180deg,var(--white) 0 50%,var(--navy) 50% 100%)}
+.wline::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#8aa2b4}
+.wline .wl{display:grid;grid-template-rows:1fr 1fr;text-align:center;font-weight:400;font-size:clamp(38px,6.6vw,108px);line-height:1;letter-spacing:-.03em;font-variation-settings:"opsz" 96;padding:0 var(--gut)}
+.wline .up{align-self:end;padding-bottom:clamp(18px,2.4vw,34px);color:var(--ink)}
+.wline .down{align-self:start;padding-top:clamp(18px,2.4vw,34px);color:#fff;font-style:italic}
+.wline .wk{position:absolute;left:var(--gut);top:calc(50% + 14px);color:#b9cad6}
+@media (max-width:760px){.wline .wk{display:none}}
+/* 4. services: a spec plate */
+.plate{padding:clamp(80px,10vw,150px) var(--gut);max-width:1300px;margin:0 auto}
+.plate .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:28px}
+.plate .head .h2{max-width:14ch}
+.plate .head p{max-width:28em;color:#3b4044}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:clamp(40px,6vw,96px);border-top:1px solid var(--ink)}
+.svc div{display:grid;grid-template-columns:2.6em 1fr;gap:6px 14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.svc dt{grid-column:2;font-size:clamp(21px,1.8vw,25px);line-height:1.2;letter-spacing:-.01em}
+.svc dd{grid-column:2;font-size:16.5px;color:#3b4044}
+.svc .n{grid-row:1/3;grid-column:1;font-family:var(--sans);font-size:12.5px;letter-spacing:.12em;color:var(--mute);padding-top:7px}
+.rates{margin-top:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rates summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:60px;font-family:var(--sans);font-size:15px;letter-spacing:.04em}
+.rates summary::-webkit-details-marker{display:none}
+.rates summary::after{content:"›";font-size:22px;transition:transform .5s var(--ease-settle)}
+.rates[open] summary::after{transform:rotate(90deg)}
+.rates dl{font-family:var(--sans);font-size:15px;padding-bottom:16px}
+.rates dl div{display:grid;grid-template-columns:minmax(9em,14em) 1fr;gap:14px;padding:10px 0;border-top:1px solid #e6eaeb}
+.rates dt{color:var(--mute)}
+
+/* 5. the four passes (night chapter) */
+.passes{background:var(--navy);color:#fff;padding:clamp(80px,10vw,150px) var(--gut)}
+.passes .in{max-width:1300px;margin:0 auto;display:grid;gap:clamp(40px,5vw,100px);align-items:center}
+@media (min-width:980px){.passes .in{grid-template-columns:minmax(0,1fr) minmax(0,.8fr)}}
+.passes .kick{color:var(--foam)}
+.passes .h2{margin-top:16px;max-width:16ch}
+.passes ol{list-style:none;margin-top:36px;border-top:1px solid rgba(255,255,255,.3)}
+.passes li{display:grid;grid-template-columns:3.2em 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.passes li b{font-weight:400;font-size:28px;line-height:1;font-style:italic;color:var(--foam);font-variation-settings:"opsz" 96}
+.passes li strong{display:block;font-weight:400;font-size:21px}
+.passes li span{display:block;font-size:16.5px;color:#d7e2ea;margin-top:2px}
+.passes .slot{aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center;--stage-bg:var(--navy-2)}
+.passes .slot-cap{margin-top:12px;text-align:center;color:#c6d4de;font-family:var(--sans);font-size:13.5px}
+
+/* 6. at your dock */
+.dock{padding:clamp(80px,10vw,140px) var(--gut);background:var(--mist)}
+.dock .in{max-width:1100px;margin:0 auto;display:grid;gap:30px 80px}
+@media (min-width:900px){.dock .in{grid-template-columns:1fr 1fr}}
+.dock p.big{font-size:clamp(19px,1.6vw,23px);margin-top:16px;max-width:26em}
+.dock ul{list-style:none;border-top:1px solid #c3cccf;font-family:var(--sans);font-size:15.5px}
+.dock li{padding:14px 0;border-bottom:1px solid #c3cccf;display:grid;grid-template-columns:9em 1fr;gap:14px}
+.dock li span{color:var(--mute)}
+
+/* 7. call: the hull's navy */
+.call{background:var(--navy-2);color:#fff;text-align:center;padding:clamp(90px,11vw,170px) var(--gut)}
+.call .kick{color:var(--foam)}
+.call .h2{margin:16px auto 0;max-width:15ch}
+.call .num{margin-top:28px;font-size:clamp(36px,5.4vw,76px);line-height:1.1;letter-spacing:-.02em;font-variation-settings:"opsz" 96}
+.call .meta{margin-top:14px;font-family:var(--sans);font-size:15px;color:#c6d4de}
+
+/* footer */
+.foot{background:var(--black);color:#fff;padding:clamp(64px,8vw,110px) var(--gut) 36px}
+.foot .k{color:#bdbdbd}
+.foot .big{display:inline-block;padding:4px 0 12px;font-size:clamp(34px,5vw,72px);line-height:1.1;letter-spacing:-.02em;margin-top:14px;font-variation-settings:"opsz" 96}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 28px;margin-top:26px;font-size:19px}
+.foot nav a{display:inline-flex;min-height:44px;align-items:center;--ul-b:8px}
+.foot .sample{margin-top:44px;max-width:60ch;color:#cfcfcf;font-size:16px}
+.foot .legal{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;margin-top:clamp(48px,6vw,90px);color:#9a9a9a;font-family:var(--sans);font-size:13.5px}
+
+.bar{display:none}
+@media (max-width:760px){
+  :root{--head-h:62px;--anchor-offset:70px}
+  .top{grid-template-columns:1fr auto}
+  .top .l{display:none}
+  .name{align-items:flex-start}
+  .name b{font-size:18px;letter-spacing:.22em}
+  .strip .lg{display:none}
+  .open{min-height:calc(100svh - 44px - var(--head-h) - 72px)}
+  .open .copy{padding-top:40px}
+  .open .acts .btn{width:100%}
+  .hull{aspect-ratio:4/5}
+  .stages{grid-template-columns:1fr}
+  .stages p{padding:12px 0;border-bottom:1px solid var(--line)}
+  .rates dl div,.dock li{grid-template-columns:1fr;gap:2px}
+  .bar{display:block;position:sticky;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom))}
+  .bar .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.stages p,.rates summary::after{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip"><a href="#about-sample">Concept site<span class="lg"> · a sample by Marlon Jimenez</span> · the business is made up</a></div>
+<header class="top">
+  <nav class="side l" aria-label="Sections"><a class="m-link q" href="#polish">The polish</a><a class="m-link q" href="#services">Services</a><a class="m-link q" href="#dock">At your dock</a></nav>
+  <a class="name" href="#main" aria-label="Shoalbright Boat Care, back to the top"><b>Shoalbright</b><small>Boat care · Naples</small></a>
+  <nav class="side r" aria-label="Contact"><a class="m-link q" href="#call">Call [phone]</a></nav>
+</header>
+
+<main id="main">
+  <section class="open" aria-labelledby="h1">
+    <figure class="m-stage" data-name="opening film" data-dwell="0">
+      <picture>
+        <source media="(max-width: 760px)" srcset="video/hero-tall-poster.jpg" width="720" height="1280">
+        <img src="video/hero-poster.jpg" srcset="video/hero-poster-960.jpg 960w, video/hero-poster.jpg 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
+      </picture>
+      <video muted loop playsinline preload="none" width="1920" height="1080" aria-label="An animation made for this page: the bow of a navy boat under a pale morning sky; a long highlight glides along the polished hull while light from the water ripples across it.">
+        <source src="video/hero-tall.mp4" type="video/mp4" media="(max-width: 760px)">
+        <source src="video/hero.mp4" type="video/mp4">
+      </video>
+      <button class="m-stage__toggle" type="button" hidden><i aria-hidden="true"></i><span class="t">Pause</span><span class="m-stage__sr"> the opening film</span></button>
+    </figure>
+    <div class="copy">
+      <p class="kick" data-load style="--o:1">Boat detailing at your dock · Naples, Florida</p>
+      <h1 id="h1" class="display" data-lines>Gloss above the waterline.</h1>
+      <p class="sub" data-load style="--o:4">Shoalbright washes, compounds, polishes and protects boats where they’re kept, so salt and sun don’t get the last word.</p>
+      <div class="acts" data-load style="--o:5">
+        <a class="btn m-press" href="#call" data-magnetic="6">Book a dock visit</a>
+        <a class="tl m-link" href="#polish">Try the polish</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="polish" id="polish" aria-labelledby="polish-h">
+    <div class="head m-reveal">
+      <p class="kick">The polish</p>
+      <h2 id="polish-h" class="h2">From chalky to <em>deep</em></h2>
+      <p>Gulf sun turns gelcoat pale and chalky. Drag across the hull, or use the slider, to see what compounding and polishing bring back.</p>
+    </div>
+    <div class="hull m-reveal" data-hull aria-hidden="true">
+      <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <defs>
+          <linearGradient id="g-gloss" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2d5378"/><stop offset=".14" stop-color="#173757"/><stop offset=".6" stop-color="#0e243b"/><stop offset="1" stop-color="#081626"/></linearGradient>
+          <linearGradient id="g-sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#eaf2f7" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <linearGradient id="g-chalk" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8496a8"/><stop offset=".5" stop-color="#6f8296"/><stop offset="1" stop-color="#5b6d80"/></linearGradient>
+          <filter id="f-chalk" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+          <filter id="f-soft"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <!-- the polished hull: deep navy, the sky and a piling reflected -->
+        <rect width="1600" height="700" fill="url(#g-gloss)"/>
+        <path d="M0 150 Q800 100 1600 160 L1600 236 Q800 170 0 226 Z" fill="url(#g-sky)" filter="url(#f-soft)"/>
+        <path d="M0 268 Q800 214 1600 276" stroke="#9db8cf" stroke-width="2" fill="none" opacity=".55"/>
+        <rect x="1180" y="120" width="34" height="520" fill="#06111d" opacity=".55" filter="url(#f-soft)"/>
+        <rect x="1236" y="140" width="22" height="500" fill="#06111d" opacity=".4" filter="url(#f-soft)"/>
+        <rect x="0" y="0" width="1600" height="16" fill="#e9eef1"/>
+        <rect x="0" y="626" width="1600" height="16" fill="#eef3f4"/>
+        <rect x="0" y="642" width="1600" height="58" fill="#24606b"/>
+        <!-- the oxidised layer: pale, flat and chalky; clipped away from the left as it's polished -->
+        <g class="chalk">
+          <rect y="16" width="1600" height="610" fill="url(#g-chalk)"/>
+          <rect y="16" width="1600" height="610" fill="#fff" filter="url(#f-chalk)" opacity=".38"/>
+          <path d="M0 210 Q800 170 1600 220" stroke="#a9b8c6" stroke-width="40" fill="none" opacity=".25" filter="url(#f-soft)"/>
+        </g>
+      </svg>
+      <span class="edge"></span>
+      <span class="tag l">Polished</span><span class="tag r">Oxidised</span>
+    </div>
+    <div class="control">
+      <label for="buff"><span>How much of the hull is polished</span><output for="buff" data-out>50%</output></label>
+      <input id="buff" type="range" min="0" max="100" step="1" value="50" aria-describedby="buff-stage">
+    </div>
+    <div class="stages" id="buff-stage" aria-live="polite">
+      <p data-s="0"><b>Oxidised</b>Pale, chalky, rubs off on your hand.</p>
+      <p data-s="1" class="on"><b>Compounded</b>The dead surface is cut away.</p>
+      <p data-s="2"><b>Polished and sealed</b>The colour comes back deep, then gets protection.</p>
+    </div>
+    <p class="note">An illustration made for this page, not a photo of a real boat.</p>
+  </section>
+
+  <section class="wline" aria-label="The waterline">
+    <h2 class="wl"><span class="up m-reveal">Above the line, shine.</span><span class="down m-reveal">Below it, the Gulf.</span></h2>
+    <p class="kick wk" aria-hidden="true">Waterline</p>
+  </section>
+
+  <section class="plate" id="services" aria-labelledby="svc-h">
+    <div class="head m-reveal">
+      <h2 id="svc-h" class="h2">Everything from the rub rail up</h2>
+      <p>Choose one pass or the full set. We bring our own water filter, buckets and polishers; you tell us where the boat is.</p>
+    </div>
+    <dl class="svc" data-stagger>
+      <div><span class="n">01</span><dt>Wash and dry</dt><dd>Fresh water, soft brushes and a chamois, deck to waterline.</dd></div>
+      <div><span class="n">02</span><dt>Compound and polish</dt><dd>Chalky gelcoat cut back and polished to its colour.</dd></div>
+      <div><span class="n">03</span><dt>Wax or sealant</dt><dd>A protective coat after polishing, [product type].</dd></div>
+      <div><span class="n">04</span><dt>Stainless and brightwork</dt><dd>Rails, cleats and fittings polished; teak cleaned.</dd></div>
+      <div><span class="n">05</span><dt>Canvas, vinyl and glass</dt><dd>Covers, seats and windscreens cleaned and protected.</dd></div>
+      <div><span class="n">06</span><dt>Interior</dt><dd>Cabin, head and cushions cleaned; hatches aired.</dd></div>
+    </dl>
+    <details class="rates m-reveal">
+      <summary>Rates</summary>
+      <dl>
+        <div><dt>Wash and dry</dt><dd>[price per foot]</dd></div>
+        <div><dt>Compound and polish</dt><dd>[price per foot]</dd></div>
+        <div><dt>Wax or sealant</dt><dd>[price per foot]</dd></div>
+        <div><dt>Regular wash plan</dt><dd>[price per visit, weekly or every two weeks]</dd></div>
+      </dl>
+    </details>
+  </section>
+
+  <section class="passes" aria-labelledby="passes-h">
+    <div class="in">
+      <div>
+        <p class="kick m-reveal">How a polish goes</p>
+        <h2 id="passes-h" class="h2 m-reveal">Four passes, one boat at a time</h2>
+        <ol data-stagger>
+          <li><b>i</b><p><strong>Wash</strong><span>Salt and grime off first, so nothing gets ground in.</span></p></li>
+          <li><b>ii</b><p><strong>Compound</strong><span>The chalky layer cut away, a section at a time.</span></p></li>
+          <li><b>iii</b><p><strong>Polish</strong><span>Fine passes until the reflection is sharp again.</span></p></li>
+          <li><b>iv</b><p><strong>Protect</strong><span>Wax or sealant, then a last wipe and a walk-round with you.</span></p></li>
+        </ol>
+      </div>
+      <div>
+        <!-- FOOTAGE SLOT S1 (4:5, 1080x1350; 8 s seamless loop): the owner's own close footage of a polisher moving across
+             gelcoat, or water beading on a freshly sealed hull. Hands and tools only: no faces, no boat names or registration
+             numbers, no marina signs. ≤ 800 KB, H.264, muted. To add it: put <video muted loop playsinline preload="none"
+             width="1080" height="1350" aria-label="…what it shows…"><source src="video/slot.mp4" type="video/mp4"></video>
+             and a Pause/Play button (copy the one from the opening film) inside this figure, and remove aria-hidden. -->
+        <figure class="slot m-stage m-unveil" data-slot="s1" data-name="film" aria-hidden="true">
+          <picture><img src="video/slot-poster.jpg" srcset="video/slot-poster-540.jpg 540w, video/slot-poster.jpg 1080w" sizes="(min-width: 980px) 460px, 90vw" width="1080" height="1350" alt="" loading="lazy" decoding="async"></picture>
+        </figure>
+        <p class="slot-cap m-reveal">Polished gelcoat, close up (a drawing made for this page)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dock" id="dock" aria-labelledby="dock-h">
+    <div class="in">
+      <div class="m-reveal">
+        <p class="kick">At your dock</p>
+        <h2 id="dock-h" class="h2">We come to the boat</h2>
+        <p class="big">At home on a canal, on a lift, or in a marina slip. Tell us where it is and when you’d like it done; you don’t need to be there.</p>
+      </div>
+      <ul data-stagger>
+        <li><span>Where</span>[areas and marinas served]</li>
+        <li><span>What we need</span>A water spigot within reach, and the marina’s permission where it’s required</li>
+        <li><span>Boats</span>[size range, for example up to a set length]</li>
+        <li><span>Insured</span>[insurer and type of cover, to be supplied]</li>
+        <li><span>Hours</span>[days and hours]</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="call" id="call" aria-labelledby="call-h">
+    <p class="kick m-reveal">Book a dock visit</p>
+    <h2 id="call-h" class="h2 m-reveal">Tell us the boat, the length and where she’s kept.</h2>
+    <p class="num m-reveal">[phone]</p>
+    <p class="meta m-reveal">[hours] · or email [email address]</p>
+    <p class="meta m-reveal">This is a concept site: the number above is a placeholder, so nothing here dials yet.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="kick k">Shoalbright Boat Care</p>
+  <a class="big m-link" href="#call">Book a dock visit</a>
+  <nav aria-label="Footer"><a class="m-link" href="#polish">The polish</a><a class="m-link" href="#services">Services</a><a class="m-link" href="#dock">At your dock</a></nav>
+  <p class="sample" id="about-sample">A concept site. Shoalbright Boat Care is a made-up business, and this page is a sample made by Marlon Jimenez, web designer in Naples, Florida, to show his work. The phone, rates, areas, insurance and hours are placeholders. The pictures and the film are drawings made for this page.</p>
+  <div class="legal"><span>Concept site · © 2026 Marlon Jimenez</span><span>This page sets no cookies of its own and has no analytics. Its fonts are stored with the page.</span></div>
+</footer>
+<div class="bar"><a class="btn m-press" href="#call">Book a dock visit</a></div>
+
+<script>
+/* Buff the hull: the slider (or a drag across the hull) sets how much is polished. Without JavaScript the hull shows
+   half and half, and all three stages are listed. */
+(function(){
+  var hull=document.querySelector('[data-hull]'), r=document.getElementById('buff'), out=document.querySelector('[data-out]');
+  var st=[].slice.call(document.querySelectorAll('.stages p')); if(!hull||!r) return;
+  var last=-1;
+  function set(v){ v=Math.max(0,Math.min(100,Math.round(v))); r.value=v; hull.style.setProperty('--v',v); r.style.setProperty('--v',v); out.textContent=v+'%';
+    var s=v<34?0:v<67?1:2; if(s!==last){ st.forEach(function(p,i){p.classList.toggle('on',i===s);}); last=s; } }
+  r.addEventListener('input',function(){set(+r.value);});
+  var drag=false;
+  function at(e){ var b=hull.getBoundingClientRect(); set((e.clientX-b.left)/b.width*100); }
+  hull.addEventListener('pointerdown',function(e){drag=true;hull.setPointerCapture(e.pointerId);at(e);});
+  hull.addEventListener('pointermove',function(e){if(drag)at(e);});
+  hull.addEventListener('pointerup',function(){drag=false;});
+  hull.addEventListener('pointercancel',function(){drag=false;});
+  set(50);
+})();
+</script>
+</body>
+</html>

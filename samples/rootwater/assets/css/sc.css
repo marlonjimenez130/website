@@ -1,0 +1,19 @@
+/* Rootwater Plumbing Co. · seasonal checks: the year ring (P6: loaded only on its own page, after site.css and pages.css) */
+/* repiping, seasonal: finished drawings */
+.fig--year{max-width:460px;justify-self:center}
+.key{display:inline-block;width:18px;height:6px;margin-right:6px;vertical-align:.2em}
+.key--copper{background:var(--copper)}.key--pale{background:var(--mist)}
+/* Seasonal ring: the hurricane season and the months away turn into place on the year, then the two visits mark it */
+.fig--year{view-timeline-name:--yr}
+.yr-season,.yr-away{transform-box:view-box;transform-origin:170px 170px}
+.yr-mark{transform-box:fill-box;transform-origin:center}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .yr-season{animation:yr-turn linear both;animation-timeline:--yr;animation-range:entry 10% entry 70%}
+    .yr-away{animation:yr-turn-back linear both;animation-timeline:--yr;animation-range:entry 30% entry 85%}
+    .yr-mark{animation:pop-in linear both;animation-timeline:--yr;animation-range:entry 75% entry 100%}
+    .yr-lab{animation:fade-in linear both;animation-timeline:--yr;animation-range:entry 85% entry 100%}
+  }
+}
+@keyframes yr-turn{from{transform:rotate(-150deg);opacity:0}}
+@keyframes yr-turn-back{from{transform:rotate(110deg);opacity:0}}

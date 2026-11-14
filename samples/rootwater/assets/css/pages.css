@@ -1,0 +1,180 @@
+/* Rootwater Plumbing Co. · pages.css: inner pages only (the home page never loads it, to keep its core small).
+   Loaded after site.css by every page except index.html (the pages_css setting in src/_site.json). */
+/* ==========================================================================
+   Inner pages (merged from the Starter kit, re-themed in the flagship's look).
+   Page hero with a quiet CSS/SVG water motif (no WebGL off the home page), breadcrumbs, sections, prose,
+   link cards, signs list, FAQ, forms, panels, the closing call band and the footer links.
+   ========================================================================== */
+/* ---------- page hero (House style, H4): the light gallery ground, ink type centred on one axis, the drawing centred
+   below on a dark piece panel, and the water as faint swell lines */
+.phero{position:relative;isolation:isolate;overflow:hidden;background:var(--ground);color:var(--fg);text-align:center;padding:clamp(136px,18vh,190px) 0 clamp(56px,7vw,104px)}
+.phero__waves{position:absolute;left:-12%;bottom:0;z-index:-1;width:124%;max-width:none;height:46%;pointer-events:none}
+.phero__waves path{fill:none;stroke:rgba(4,32,28,.09);stroke-width:1;vector-effect:non-scaling-stroke;animation:swell 9s ease-in-out infinite alternate}
+.phero__waves path:nth-child(2){animation-duration:12s;animation-delay:-3s}
+.phero__waves path:nth-child(3){animation-duration:10s;animation-delay:-6s}
+.phero__waves path:nth-child(4){animation-duration:14s;animation-delay:-2s}
+.phero__in,.phero__text{display:grid;justify-items:center}
+.phero .kicker{margin-top:14px}
+.phero__title{margin-top:12px;font:400 var(--t-1)/1 var(--f-display);letter-spacing:-.025em;max-width:14em;color:var(--fg)}
+.phero__lede{margin-top:22px;max-width:36em;color:var(--muted);font-size:clamp(1.08rem,1rem + .45vw,1.3rem);line-height:1.55}
+.phero__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+@media (max-width:560px){.phero__actions{width:100%}.phero__actions .btn{width:100%}}
+.js .phero [data-in]{opacity:0;transform:translateY(14px);animation:rise 1s var(--house) forwards;animation-delay:calc(.05s + var(--d,0) * .08s)}
+.js .phero .phero__title[data-in],.js .phero .phero__lede[data-in]{opacity:1;transform:none;animation:none}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ---------- breadcrumbs */
+.crumbs ol{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;list-style:none;margin:0;padding:0;font:500 .8125rem/1.2 var(--f-label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.crumbs li{display:flex;align-items:center}
+.crumbs li+li::before{content:"/";margin:0 10px;color:var(--muted)}
+.crumbs a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--fg);text-decoration:underline;text-underline-offset:.3em}
+.crumbs [aria-current="page"]{color:var(--fg)}
+
+/* ---------- sections and layout */
+.section{padding:clamp(4rem,3rem + 4vw,7.5rem) 0;background:var(--paper)}
+.section--alt{background:var(--paper-2)}
+.section--dark{background:var(--ink);color:var(--cream)}
+.section--dark .lede{color:var(--mist)}
+.section h2{font:400 var(--t-2)/1 var(--f-display);letter-spacing:-.02em;color:var(--ink)}
+.section--dark h2{color:var(--cream)}
+.head .lede{margin-top:0}
+.split{display:grid;gap:clamp(28px,5vw,80px);align-items:start}
+.split>*{min-width:0}
+@media (min-width:900px){.split{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}.split--even{grid-template-columns:1fr 1fr}}
+.panel{padding:clamp(24px,3vw,44px);background:var(--card);border:1px solid var(--line)}
+.section--alt .panel{background:#fff}
+.panel{display:grid;gap:14px;align-content:start}
+.panel h2{font-size:clamp(1.8rem,1.3rem + 1.6vw,2.6rem)}
+.panel .call__phone{color:var(--ink)}
+.panel .form{margin-top:8px}
+
+/* ---------- prose (statements, about, long answers) */
+.prose{max-width:68ch}
+.prose>*+*{margin-top:1em}
+.prose>:first-child{margin-top:0}
+.prose>h2{margin-top:1.5em;font:400 clamp(1.7rem,1.3rem + 1.4vw,2.5rem)/1.05 var(--f-display);color:var(--ink)}
+.prose>h3{margin-top:1.4em;font:400 clamp(1.35rem,1.2rem + .6vw,1.7rem)/1.15 var(--f-display);color:var(--ink)}
+.prose>h2+*,.prose>h3+*{margin-top:.55em}
+.prose ul,.prose ol{padding-left:1.25em}
+.prose li+li{margin-top:.4em}
+.prose li::marker{color:var(--muted)}
+.prose a:hover,.link:hover{text-decoration-thickness:2px}
+.muted{color:var(--muted)}
+
+/* ---------- link cards (services overview, areas): the flagship card, with the whole card clickable */
+
+/* ---------- signs list */
+.signs{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+@media (min-width:700px){.signs--two{grid-template-columns:1fr 1fr;column-gap:32px}}
+.signs li{position:relative;padding-left:2.1em}
+.signs li::before{content:"";position:absolute;left:.15em;top:.35em;width:1em;height:1em;border-radius:50% 50% 50% 0;transform:rotate(135deg);background:var(--ink-3)}
+.signs li::after{content:"";position:absolute;left:.36em;top:.82em;width:.2em;height:.32em;border-radius:50%;background:rgba(255,255,255,.6)}
+
+/* ---------- numbered steps (a real sequence) */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:26px;counter-reset:s}
+.steps>li{position:relative;padding-left:4rem;counter-increment:s}
+.steps>li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:.35em;font:500 .8125rem/1 var(--f-label);letter-spacing:.1em;color:var(--muted)}
+.steps h3{font:400 clamp(1.4rem,1.2rem + .7vw,1.8rem)/1.1 var(--f-display);color:var(--ink)}
+.steps p{margin-top:8px;color:var(--muted)}
+
+/* ---------- FAQ: details/summary, works without JavaScript */
+.faq{border-top:1px solid var(--line);max-width:52rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:44px;padding:22px 0;list-style:none;cursor:pointer;font:400 clamp(1.3rem,1.15rem + .6vw,1.7rem)/1.2 var(--f-display);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:20px;height:20px;background:linear-gradient(var(--fg),var(--fg)) center/14px 1px no-repeat,linear-gradient(var(--fg),var(--fg)) center/1px 14px no-repeat;transition:transform .5s var(--house)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--brand)}
+.faq__a{max-width:64ch;padding-bottom:24px;color:var(--muted)}
+.faq__a>*+*{margin-top:.75em}
+.faq details::details-content{block-size:0;overflow:hidden;transition:block-size .4s var(--ease),content-visibility .4s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
+
+
+/* ---------- closing call band on inner pages, footer links */
+
+/* ---------- 404 */
+.e404 .phero__title{max-width:11em}
+
+/* ==========================================================================
+   Phase 2: inner pages (services, six service pages, areas, about, contact, accessibility, 404).
+   Every story piece is finished by default (no JS, reduced motion, no scroll-timeline support);
+   motion is added on top, transform and opacity only.
+   ========================================================================== */
+.section--tight{padding:clamp(2.5rem,2rem + 2vw,4rem) 0}
+/* footer columns */
+/* services: the symptom picker (links to cards; :target lifts the card, :has dims the rest) */
+.picker{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.picker a{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;background:var(--card);border:1px solid var(--line);color:var(--fg);font:500 .95rem/1.2 var(--f-label);letter-spacing:.02em;text-decoration:none;transition:border-color .5s var(--house),background-color .5s var(--house)}
+.picker a:hover{border-color:var(--fg)}
+.picker__note{margin-top:18px}
+.cards--picker .card{scroll-margin-top:110px;transition:border-color .5s var(--house),opacity .5s var(--house)}
+.cards--picker .card:target{border-color:var(--fg);outline:1px solid var(--fg)}
+.cards--picker:has(.card:target) .card:not(:target){opacity:.55}
+/* price list */
+.prices{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.prices li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.prices__name{font-weight:600;color:var(--ink)}
+.prices__time{font-size:.92rem;color:var(--muted)}
+.prices__lead{flex:1 1 2rem;min-width:2rem;border-bottom:2px dotted var(--line);transform:translateY(-.3em)}
+.prices__price{font-weight:600;color:var(--ink)}
+.prices__note{margin-top:14px;font-size:.95rem}
+/* lists */
+.signs--three{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));column-gap:32px}
+.signs__note{margin-top:20px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.ticks li{position:relative;padding-left:2.2em}
+.ticks li::before{content:"";position:absolute;left:0;top:.15em;width:1.4em;height:1.4em;border-radius:50%;background:var(--brand)}
+.ticks li::after{content:"";position:absolute;left:.48em;top:.42em;width:.42em;height:.7em;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.steps--grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));column-gap:32px;row-gap:34px}
+/* spec rows (H3): name, then what it does, between hairlines, like the price list */
+.opts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:60rem}
+.opts>li{display:grid;gap:6px 40px;padding:22px 0;border-bottom:1px solid var(--line)}
+@media (min-width:700px){.opts>li{grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:baseline}.opts>li>:not(h3){grid-column:2}}
+.opts h3{font:400 clamp(1.5rem,1.3rem + .8vw,2rem)/1.1 var(--f-display);color:var(--ink)}
+.opts p{color:var(--muted)}
+.opts__after{margin-top:26px}
+.sources{margin-top:18px;font-size:.88rem;line-height:1.5;color:var(--mist)}
+.sources--light{color:var(--muted)}
+.sources a{display:inline-block;padding-block:4px;text-underline-offset:.2em}
+/* story sections: dark band, text beside a figure */
+.split--story{align-items:center}
+.story-text p{color:var(--mist)}
+.fig{margin:0;min-width:0}
+.fig svg{width:100%;height:auto}
+.fig figcaption{margin-top:12px;font-size:.88rem;color:var(--mist)}
+@media (min-width:900px){.split--story{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}}
+@keyframes fade-in{from{opacity:0}}
+@keyframes pop-in{from{opacity:0;transform:scale(.3)}}
+.jump{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:0 20px}
+.jump{justify-content:center}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--fg);font:500 .95rem/1.2 var(--f-label);letter-spacing:.02em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+.jump a:hover{text-decoration-thickness:2px}
+/* 404: the drip */
+.e404__grid{display:grid;gap:32px;justify-items:center}
+.drip{width:min(220px,50vw);justify-self:center}
+.jump--plain{margin-top:30px}
+.drip__ring{opacity:0;transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  .drip__drop{animation:drip 3.6s cubic-bezier(.55,0,1,.45) infinite}
+  .drip__ring{animation:drip-ring 3.6s var(--ease) infinite}
+}
+@keyframes drip{0%,55%{transform:none;opacity:1}80%{transform:translateY(80px);opacity:1}81%,100%{transform:translateY(80px);opacity:0}}
+@keyframes drip-ring{0%,80%{opacity:0;transform:scale(.2)}82%{opacity:1}100%{opacity:0;transform:scale(1.6)}}
+
+/* ---------- fix round 1 (Harmonia, 2026-11-09) */
+/* L3: each service hero shows a still of its own drawing; below the text on phones */
+.phero__media{--focus:var(--cream);width:min(100%,600px);margin-top:clamp(40px,5vw,64px);padding:clamp(24px,4vw,48px);border-radius:var(--r-piece);background:var(--ink)}
+.phero__media svg{width:100%;max-width:440px;height:auto;margin-inline:auto}
+.phero__media--map{width:min(100%,420px);padding:0;overflow:hidden}.phero__media--map svg{max-width:none}
+/* L2: five steps sit in one row instead of leaving "05" alone */
+@media (min-width:1100px){.steps--grid:has(>li:nth-child(5)){grid-template-columns:repeat(5,minmax(0,1fr));column-gap:24px}}
+/* L5: the services cards add the symptom and a price row */
+.card__facts{display:grid;gap:8px;margin:4px 0 0;font-size:.95rem}
+.card__facts div{display:flex;flex-wrap:wrap;gap:4px 10px}
+.card__facts dt{font:500 .8125rem/1.5 var(--f-label);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card__facts dd{margin:0;color:var(--fg)}
+.card--lg .card__facts dt{color:var(--mist)}.card--lg .card__facts dd{color:var(--cream)}
+
+/* ---------- fix round 2 (2026-11-10) */

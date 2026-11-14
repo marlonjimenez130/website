@@ -1,0 +1,28 @@
+/* Rootwater Plumbing Co. · contact: the form and the hours (P6: loaded only on its own page, after site.css and pages.css) */
+.form{display:grid;gap:18px}
+.form__row{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.field{display:grid;min-width:0}
+.field>label,.field__label{padding-bottom:8px;font-weight:600;line-height:1.25;color:var(--fg)}
+.field__opt{font-weight:400;color:var(--muted)}
+.field__hint{margin:-2px 0 8px;font-size:.92rem;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;min-height:54px;padding:.75rem 1rem;border:1px solid #6b6b6b;border-radius:0;background:#fff;color:var(--fg);font:inherit;line-height:1.4;accent-color:var(--brand)}
+.field textarea{min-height:130px;resize:vertical}
+.field select{appearance:none;-webkit-appearance:none;padding-right:2.8rem;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5c56' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 1rem center/1.1rem}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--ink)}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--fg);outline-offset:2px;border-color:var(--ink)}
+.field [aria-invalid="true"]{border-color:#b42318;border-width:2px}
+.field__error{margin-top:8px;color:#b42318;font-size:.92rem;font-weight:600}
+.form__hp{position:absolute!important;left:-10000px;width:1px;height:1px;overflow:hidden;opacity:0}
+.form__status{padding:14px 18px;background:#dff1e9;color:var(--fg);font-weight:600}
+.form__status:empty{padding:0;background:none}
+.form__status.is-error{background:#fde8e6;color:#9b1c13}
+.form__note{font-size:.92rem;color:var(--muted)}
+.form .btn{justify-self:start}
+@media (max-width:560px){.form .btn{justify-self:stretch}}
+/* contact */
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours th,.hours td{padding:10px 0;border-bottom:1px solid var(--line);font-weight:400;text-align:left}
+.hours td{text-align:right}
+.contact__addr{font-style:normal;line-height:1.6}
+/* contact: the big number on a light panel */
+.panel .call__phone{border-bottom-color:rgba(16,36,31,.3)}

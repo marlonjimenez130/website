@@ -1,0 +1,16 @@
+/* Rootwater Plumbing Co. · drains: the camera's view (P6: loaded only on its own page, after site.css and pages.css) */
+/* drains: the camera's view (rings flow toward you; still rings without motion) */
+.cm-ring{transform-box:view-box;transform-origin:200px 130px;transform:scale(var(--s,1))}
+.cm-ring:nth-child(1){--s:.25}.cm-ring:nth-child(2){--s:.45}.cm-ring:nth-child(3){--s:.7}.cm-ring:nth-child(4){--s:1}
+@media (prefers-reduced-motion:no-preference){
+  .cm-ring{animation:cm-flow 4s linear infinite}
+  .cm-ring:nth-child(2){animation-delay:-1s}.cm-ring:nth-child(3){animation-delay:-2s}.cm-ring:nth-child(4){animation-delay:-3s}
+}
+@keyframes cm-flow{from{transform:scale(.2);opacity:0}20%{opacity:1}to{transform:scale(1.2);opacity:.2}}
+/* Camera (drains): when the monitor comes into view the camera rolls (rings flow, the distance counts 12 to 27 ft),
+   then stops at the roots, which settle into view. Without JavaScript or with reduced motion: the finished frame. */
+.cm-roots{transform-box:view-box;transform-origin:200px 130px;transition:opacity .9s cubic-bezier(.19,1,.22,1),transform 1.3s cubic-bezier(.19,1,.22,1)}
+.cm-found{transition:opacity .9s cubic-bezier(.19,1,.22,1) .3s}
+.js .fig--cam[data-roll]:not(.is-rolling) .cm-ring,.js .fig--cam.is-arrived .cm-ring{animation-play-state:paused}
+.js .fig--cam[data-roll]:not(.is-arrived) .cm-roots{opacity:0;transform:scale(.6)}
+.js .fig--cam[data-roll]:not(.is-arrived) .cm-found{opacity:0}

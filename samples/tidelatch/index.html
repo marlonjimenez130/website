@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tidelatch Home Watch · Naples, Florida (concept site)</title>
+<meta name="description" content="A concept site for a made-up home watch service in Naples, Florida: every room of a closed-up seasonal home walked on a schedule, and a dated report with photos after each visit.">
+<meta name="theme-color" content="#ffffff">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f1f1f'/%3E%3Ccircle cx='16' cy='17' r='6' fill='%23f2c47e'/%3E%3C/svg%3E">
+<!-- fonts load without blocking the first paint; a metric-matched Georgia stands in until they arrive (no layout shift) -->
+<link rel="stylesheet" href="./fonts/fonts.css">
+
+<link rel="preload" as="image" href="video/hero-poster.jpg" media="(min-width: 761px)" fetchpriority="high">
+<link rel="preload" as="image" href="video/hero-phone-poster.jpg" media="(max-width: 760px)" fetchpriority="high">
+<link rel="stylesheet" href="kit/motion.css">
+<link rel="stylesheet" href="kit/vfx/grain.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){window.mReady||document.documentElement.classList.remove('js')},3000)</script>
+<script src="kit/motion.js" defer></script>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip"><a href="#about-sample">Concept site<span class="lg"> · a sample by Marlon Jimenez</span> · the business is made up</a></div>
+<header class="top">
+  <nav class="side l" aria-label="Sections"><a class="m-link q" href="#walk">The walk-through</a><a class="m-link q" href="#report">A visit report</a><a class="m-link q" href="#services">Services</a></nav>
+  <a class="name" href="#main" aria-label="Tidelatch Home Watch, back to the top"><b>Tidelatch</b><small>Home Watch</small></a>
+  <nav class="side r" aria-label="Contact"><a class="m-link q call-top" href="tel:+12395550147"><span class="sr">Call Tidelatch, sample number </span><span aria-hidden="true">Call&nbsp;</span>(239) 555-0147</a></nav>
+</header>
+
+<main id="main">
+  <!-- 1. Opening: AI-generated footage (Artlist), a calm canal at sunrise; the camera glides toward a dock. -->
+  <section class="open" aria-labelledby="h1">
+    <figure class="m-stage" data-name="opening film" data-dwell="0">
+      <picture>
+        <source media="(max-width: 760px)" srcset="video/hero-phone-poster.jpg" width="720" height="1280">
+        <img src="video/hero-poster.jpg" srcset="video/hero-poster-960.jpg 960w, video/hero-poster.jpg 1600w" sizes="100vw" width="1600" height="900" alt="" fetchpriority="high">
+      </picture>
+      <video muted loop playsinline preload="none" width="1600" height="900" aria-label="AI-generated film: a calm canal at sunrise, the camera gliding slowly over still water toward an empty dock and palm-lined houses.">
+        <source src="video/hero-phone.mp4" type="video/mp4" media="(max-width: 760px)">
+        <source src="video/hero.mp4" type="video/mp4">
+      </video>
+      <button class="m-stage__toggle" type="button" hidden><i aria-hidden="true"></i><span class="t">Pause</span><span class="m-stage__sr"> the opening film</span></button>
+    </figure>
+    <div class="copy">
+      <p class="kick" data-load style="--o:1">Home watch<span class="lg"> for seasonal homes</span> · Naples, Florida</p>
+      <h1 id="h1" class="display" data-lines>While you’re away, someone walks every room.</h1>
+      <div class="acts" data-load style="--o:4"><a class="btn pill m-press" href="#contact" data-magnetic="8">Book a first walk-through</a></div>
+    </div>
+    <p class="ai">AI-generated footage</p>
+  </section>
+
+  <section class="premise" aria-labelledby="premise-h">
+    <h2 id="premise-h" class="kick m-reveal">Why a house needs watching</h2>
+    <p class="h2 m-reveal">A closed-up house in a Florida summer is never quite still: heat, damp, storms and small leaks work on it <em>every day</em> you’re gone.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </section>
+
+  <!-- 2. The morning round: AI-generated footage of a quiet palm-lined street, played forward by the scroll.
+       Without JavaScript, with reduced motion, Save-Data or a low-power device: one still and all four lines. -->
+  <section class="round" id="round" aria-labelledby="round-h" data-frames="73">
+    <div class="round__stage">
+      <picture class="round__pic">
+        <source media="(max-width: 760px)" srcset="video/street-phone-poster.jpg" width="540" height="960">
+        <img src="video/street-poster.jpg" srcset="video/street-poster-640.jpg 640w, video/street-poster.jpg 1280w" sizes="100vw" width="1280" height="720" alt="" loading="lazy" decoding="async">
+      </picture>
+      <canvas width="1152" height="648" aria-hidden="true"></canvas>
+      <div class="round__head"><h2 id="round-h" class="kick">The morning round<span class="hint" aria-hidden="true"> · scroll to drive on</span></h2><p class="ai">AI-generated footage</p></div>
+      <ol class="beats" aria-label="A morning visit, in four moments">
+        <li class="beat"><time>07:40</time><p>The street is still asleep. Shutters down, lawns cut, nobody home.</p></li>
+        <li class="beat"><time>07:46</time><p>Half the houses here are closed for the summer. Each one is somebody’s worry, a thousand miles away.</p></li>
+        <li class="beat"><time>07:50</time><p>Yours is next on the round, the same day and time every week.</p></li>
+        <li class="beat"><time>07:52</time><p>The key turns. The walk begins at the front door.</p></li>
+      </ol>
+      <div class="round__bar" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
+  <!-- 3. The signature moment: a house plan you can walk. -->
+  <section class="walk" id="walk" aria-labelledby="walk-h">
+    <div class="head m-reveal">
+      <div><p class="kick">The walk-through</p>
+      <h2 id="walk-h" class="h2">Every room, every visit, in the same order</h2></div>
+      <p class="lede">Tap a room on the plan, or walk the whole route with us. The lamp goes where we go; the times are a sample morning and the plan is not to scale.</p>
+    </div>
+    <div class="plan-wrap">
+      <div class="plan" data-follow>
+        <svg viewBox="0 -26 600 466" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="lampglow"><stop offset="0" stop-color="#f6d79f" stop-opacity=".95"/><stop offset=".55" stop-color="#f4dcae" stop-opacity=".55"/><stop offset="1" stop-color="#f5f2ec" stop-opacity="0"/></radialGradient>
+            <clipPath id="c-garage"><rect x="20" y="20" width="170" height="180"/></clipPath>
+            <clipPath id="c-entry"><rect x="190" y="20" width="110" height="110"/></clipPath>
+            <clipPath id="c-baths"><rect x="300" y="20" width="280" height="180"/></clipPath>
+            <clipPath id="c-laundry"><rect x="20" y="200" width="170" height="100"/></clipPath>
+            <clipPath id="c-kitchen"><rect x="190" y="130" width="110" height="170"/></clipPath>
+            <clipPath id="c-living"><rect x="300" y="200" width="280" height="100"/></clipPath>
+            <clipPath id="c-lanai"><rect x="20" y="300" width="560" height="120"/></clipPath>
+          </defs>
+          <text class="street" x="245" y="-10" text-anchor="middle">The street</text>
+          <path class="fx" d="M225 -2 V20 M265 -2 V20" />
+          <g>
+            <rect class="room" data-room="garage" x="20" y="20" width="170" height="180"/>
+            <rect class="room" data-room="entry" x="190" y="20" width="110" height="110"/>
+            <rect class="room" data-room="baths" x="300" y="20" width="280" height="180"/>
+            <rect class="room" data-room="laundry" x="20" y="200" width="170" height="100"/>
+            <rect class="room" data-room="kitchen" x="190" y="130" width="110" height="170"/>
+            <rect class="room" data-room="living" x="300" y="200" width="280" height="100"/>
+            <rect class="room" data-room="lanai" x="20" y="300" width="560" height="120"/>
+          </g>
+          <g>
+            <rect class="seen" data-room="garage" x="20" y="20" width="170" height="180"/>
+            <rect class="seen" data-room="entry" x="190" y="20" width="110" height="110"/>
+            <rect class="seen" data-room="baths" x="300" y="20" width="280" height="180"/>
+            <rect class="seen" data-room="laundry" x="20" y="200" width="170" height="100"/>
+            <rect class="seen" data-room="kitchen" x="190" y="130" width="110" height="170"/>
+            <rect class="seen" data-room="living" x="300" y="200" width="280" height="100"/>
+            <rect class="seen" data-room="lanai" x="20" y="300" width="560" height="120"/>
+          </g>
+          <g>
+            <circle class="glow" data-room="garage" clip-path="url(#c-garage)" cx="105" cy="110" r="130" fill="url(#lampglow)"/>
+            <circle class="glow" data-room="entry" clip-path="url(#c-entry)" cx="245" cy="75" r="110" fill="url(#lampglow)"/>
+            <circle class="glow" data-room="baths" clip-path="url(#c-baths)" cx="400" cy="110" r="190" fill="url(#lampglow)"/>
+            <circle class="glow" data-room="laundry" clip-path="url(#c-laundry)" cx="105" cy="250" r="120" fill="url(#lampglow)"/>
+            <circle class="glow" data-room="kitchen" clip-path="url(#c-kitchen)" cx="245" cy="215" r="120" fill="url(#lampglow)"/>
+            <circle class="glow" data-room="living" clip-path="url(#c-living)" cx="440" cy="250" r="190" fill="url(#lampglow)"/>
+            <circle class="glow" data-room="lanai" clip-path="url(#c-lanai)" cx="230" cy="360" r="260" fill="url(#lampglow)"/>
+          </g>
+          <!-- furniture and fixtures -->
+          <g>
+            <rect class="fx fill" x="62" y="40" width="86" height="132" rx="16"/><path class="fx" d="M70 82 Q105 70 140 82 M70 138 Q105 148 140 138"/>
+            <path class="fx" d="M200 30 H222 M200 30 V72"/>
+            <rect class="fx fill" x="456" y="30" width="112" height="40" rx="14"/><circle class="fx" cx="465" cy="92" r="9"/>
+            <rect class="fx fill" x="320" y="36" width="98" height="110" rx="2"/><path class="fx" d="M326 44 h38 v20 h-38z M374 44 h38 v20 h-38z"/>
+            <rect class="fx fill" x="470" y="124" width="96" height="66" rx="2"/><path class="fx" d="M476 130 h30 v54 h-30z"/>
+            <rect class="fx fill" x="34" y="212" width="38" height="38"/><circle class="fx" cx="53" cy="231" r="11"/>
+            <rect class="fx fill" x="78" y="212" width="38" height="38"/><circle class="fx" cx="97" cy="231" r="11"/>
+            <circle class="fx fill" cx="160" cy="232" r="18"/>
+            <path class="fx" d="M198 142 H292 M198 142 V292" style="stroke-width:12;stroke:#e3dccf"/>
+            <rect class="fx fill" x="232" y="190" width="40" height="64" rx="2"/>
+            <rect class="fx fill" x="338" y="262" width="150" height="28" rx="6"/><rect class="fx" x="380" y="226" width="66" height="26" rx="2"/>
+            <rect class="fx" x="520" y="214" width="44" height="22" rx="2"/>
+            <rect class="pool" x="334" y="318" width="226" height="86" rx="38"/>
+            <path class="ripple" d="M366 344 q14 -6 28 0 t28 0 M420 372 q14 -6 28 0 t28 0 M468 346 q12 -5 24 0 t24 0"/>
+            <circle class="fx fill" cx="112" cy="362" r="24"/><circle class="fx" cx="76" cy="362" r="8"/><circle class="fx" cx="148" cy="362" r="8"/><circle class="fx" cx="112" cy="326" r="8"/><circle class="fx" cx="112" cy="398" r="8"/>
+          </g>
+          <!-- walls, doors, glass, screen -->
+          <path class="wall" d="M20 300 V20 H45 M165 20 H225 M265 20 H580 V300"/>
+          <path class="glass" d="M45 20 H165 M45 24 H165"/>
+          <path class="wall" d="M190 20 V55 M190 95 V215 M190 255 V300 M20 200 H60 M100 200 H190 M190 130 H220 M270 130 H300 M300 20 V140 M300 180 V215 M300 285 V300 M300 200 H380 M420 200 H580 M440 20 V160 M440 190 V200 M440 110 H480 M520 110 H580 M20 300 H360 M480 300 H580"/>
+          <path class="glass" d="M360 298 H480 M360 302 H480"/>
+          <path class="door" d="M225 20 V58 A38 38 0 0 0 263 20"/>
+          <path class="screen" d="M20 300 V420 H580 V300"/>
+          <!-- labels -->
+          <text class="rl" x="105" y="192" text-anchor="middle">Garage</text>
+          <text class="rl" x="245" y="118" text-anchor="middle">Entry</text>
+          <text class="rl" x="510" y="104" text-anchor="middle">Bath</text>
+          <text class="rl" x="370" y="188" text-anchor="middle">Bedrooms</text>
+          <text class="rl" x="105" y="290" text-anchor="middle">Laundry</text>
+          <text class="rl" x="245" y="288" text-anchor="middle">Kitchen</text>
+          <text class="rl" x="530" y="290" text-anchor="middle">Living</text>
+          <text class="rl" x="230" y="412" text-anchor="middle">Lanai and pool</text>
+          <path class="trail" d="M245 75"/>
+          <g class="lamp" transform="translate(245 75)"><circle class="halo" r="22"/><circle class="core" r="6"/></g>
+        </svg>
+        <figure class="canal m-stage" data-name="canal film">
+          <picture><img src="video/canal-poster.jpg" srcset="video/canal-poster-640.jpg 640w, video/canal-poster.jpg 1280w" sizes="(min-width: 980px) 56vw, 100vw" width="1280" height="300" alt="" loading="lazy" decoding="async"></picture>
+          <video muted loop playsinline preload="none" width="1280" height="300" aria-label="AI-generated film: a canal behind a house at sunrise, still water, a wooden dock and palms."><source src="video/canal.mp4" type="video/mp4"></video>
+          <button class="m-stage__toggle" type="button" hidden><i aria-hidden="true"></i><span class="t">Pause</span><span class="m-stage__sr"> the canal film</span></button>
+          <figcaption>The canal side · AI-generated footage</figcaption>
+        </figure>
+        <div class="note"><span data-plan-status aria-hidden="true">A sample plan, not to scale.</span><button class="walk-btn m-link q" type="button" data-walk>Walk the whole route</button></div>
+      </div>
+      <div>
+        <ol class="rooms" data-rooms>
+          <li><h3><button class="rb" type="button" aria-expanded="true" aria-controls="r-entry" data-go="entry"><span class="n">01</span><span class="nm">Entry and doors</span><span class="tm">07:52</span></button></h3>
+            <ul class="checks" id="r-entry"><li>Every door and window tried and locked</li><li>Alarm panel read, any tripped sensors noted</li><li>Mail, packages and flyers brought inside</li></ul></li>
+          <li><h3><button class="rb" type="button" aria-expanded="false" aria-controls="r-garage" data-go="garage"><span class="n">02</span><span class="nm">Garage</span><span class="tm">07:55</span></button></h3>
+            <ul class="checks" id="r-garage"><li>Garage door run once, up and down</li><li>Car battery tender plugged in, if you use one</li><li>Floor checked for water, oil or droppings</li></ul></li>
+          <li><h3><button class="rb" type="button" aria-expanded="false" aria-controls="r-laundry" data-go="laundry"><span class="n">03</span><span class="nm">Laundry and water heater</span><span class="tm">07:59</span></button></h3>
+            <ul class="checks" id="r-laundry"><li>Water heater and its pan checked for leaks</li><li>Washer hoses looked over</li><li>Air handler closet: the unit running, the drain line clear</li></ul></li>
+          <li><h3><button class="rb" type="button" aria-expanded="false" aria-controls="r-kitchen" data-go="kitchen"><span class="n">04</span><span class="nm">Kitchen</span><span class="tm">08:03</span></button></h3>
+            <ul class="checks" id="r-kitchen"><li>Under the sink, by flashlight, for drips</li><li>Taps run so the drains don’t dry out</li><li>Fridge and freezer temperatures noted</li><li>Signs of ants or other pests</li></ul></li>
+          <li><h3><button class="rb" type="button" aria-expanded="false" aria-controls="r-living" data-go="living"><span class="n">05</span><span class="nm">Living room and air</span><span class="tm">08:08</span></button></h3>
+            <ul class="checks" id="r-living"><li>Thermostat and indoor humidity read and written down</li><li>Ceilings and window sills checked for stains</li><li>Blinds and lamps left the way you asked</li></ul></li>
+          <li><h3><button class="rb" type="button" aria-expanded="false" aria-controls="r-baths" data-go="baths"><span class="n">06</span><span class="nm">Baths and bedrooms</span><span class="tm">08:12</span></button></h3>
+            <ul class="checks" id="r-baths"><li>Toilets flushed and showers run</li><li>Corners and closets checked for mildew</li><li>Every window tried</li></ul></li>
+          <li><h3><button class="rb" type="button" aria-expanded="false" aria-controls="r-lanai" data-go="lanai"><span class="n">07</span><span class="nm">Lanai, pool and dock</span><span class="tm">08:19</span></button></h3>
+            <ul class="checks" id="r-lanai"><li>Screen cage looked over for tears</li><li>Pool pump running, the water level seen</li><li>Dock and seawall looked at from the lawn</li><li>Anything loose noted before storm season</li></ul></li>
+        </ol>
+        <p class="cap mute walk-status" aria-live="polite" data-walk-status></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how vfx-grain-in" id="how" aria-labelledby="how-h">
+    <div class="how-in">
+      <p class="kick m-reveal">How a visit works</p>
+      <h2 id="how-h" class="h2 m-reveal">One morning, start to finish</h2>
+      <ol class="steps" data-stagger>
+        <li><time>Day before</time><b>Ready</b><p>The forecast checked, and your notes for the house read again.</p></li>
+        <li><time>07:52</time><b>Arrive</b><p>Key in the door, alarm off, the front of the house noted as found.</p></li>
+        <li><time>07:53</time><b>The walk</b><p>Seven rooms in the same order every time, each check from the plan above.</p></li>
+        <li><time>08:25</time><b>Outside</b><p>Roof line, windows and screens from the yard; alarm set, doors tried, gone.</p></li>
+        <li><time>By noon</time><b>Your report</b><p>Dated, with photos, in your inbox. Anything urgent, a call the same morning.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="report-sec" id="report" aria-labelledby="report-h">
+    <div class="report-in">
+      <div class="say m-reveal">
+        <p class="kick">After every visit</p>
+        <h2 id="report-h" class="h2">A visit, written down</h2>
+        <p class="lede">The same report each time: when we arrived, what we checked, what we found, and a dated photo of anything that needs your eye. Here is what one could look like.</p>
+      </div>
+      <article class="sheet" aria-label="A sample visit report">
+        <div class="sh-head"><b>Visit report</b><span>Sample · [date] · [address]</span></div>
+        <ol data-stagger>
+          <li><time>07:52</time><span>Arrived, alarm off, front door locked as left</span><i>Fine</i></li>
+          <li><time>07:55</time><span>Garage dry; door run once</span><i>Fine</i></li>
+          <li><time>07:59</time><span>Water heater pan dry; air handler drain clear</span><i>Fine</i></li>
+          <li><time>08:03</time><span>Kitchen: dry under the sink, fridge at [temp]</span><i>Fine</i></li>
+          <li><time>08:08</time><span>Indoor humidity [reading], thermostat at [setting]</span><i>Noted</i></li>
+          <li><time>08:12</time><span>Guest bath: small stain on the ceiling, photo below</span><i class="for">For you</i></li>
+          <li><time>08:19</time><span>Lanai screens whole; pool running; dock as left</span><i>Fine</i></li>
+          <li><time>08:31</time><span>Alarm set, doors tried, left</span><i>Fine</i></li>
+        </ol>
+        <div class="photos" aria-label="Photo slots">
+          <figure><figcaption>[dated photo: guest bath ceiling]</figcaption></figure>
+          <figure><figcaption>[dated photo: front of the house]</figcaption></figure>
+          <figure><figcaption>[dated photo: lanai and pool]</figcaption></figure>
+        </div>
+        <p class="stamp">An example layout. The address, date, readings and photos are placeholders.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-labelledby="services-h">
+    <div class="services-in">
+      <div>
+        <p class="kick m-reveal">Services</p>
+        <h2 id="services-h" class="h2 m-reveal">What Tidelatch looks after while you’re gone</h2>
+        <ol class="svc" data-stagger>
+          <li><span class="n">01</span><h3>Scheduled visits</h3><p>Weekly or every two weeks, on a day you choose: the whole walk-through and a report every time.</p></li>
+          <li><span class="n">02</span><h3>Storm visits</h3><p>When a storm has a name: your storm plan carried out before it, a visit as soon as it’s safe after it, photos the same day.</p></li>
+          <li><span class="n">03</span><h3>Opening and closing the house</h3><p>Before you fly in: the air turned down, the water on, the pool checked. After you leave: the house closed up the way you like it.</p></li>
+          <li><span class="n">04</span><h3>Let-ins and deliveries</h3><p>Cleaners, pool and air-conditioning contractors let in and seen out; packages brought inside and noted in the report.</p></li>
+        </ol>
+      </div>
+      <aside class="terms m-reveal" aria-labelledby="terms-h">
+        <h2 id="terms-h" class="label">The arrangement</h2>
+        <dl class="spec">
+          <div><dt>Visits</dt><dd>Weekly or every two weeks</dd></div>
+          <div><dt>Price</dt><dd>[price per visit] · [price for a storm visit]</dd></div>
+          <div><dt>Reports</dt><dd>By email after every visit, with dated photos</dd></div>
+          <div><dt>Keys</dt><dd>[how keys and alarm codes are kept]</dd></div>
+          <div><dt>Insured</dt><dd>[insurer and type of cover]</dd></div>
+          <div><dt>Where</dt><dd>[service area, for example Naples and nearby]</dd></div>
+        </dl>
+        <p class="cap mute">Square brackets mark details a real business would fill in.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="contact-in">
+      <p class="kick m-reveal">Book a first walk-through</p>
+      <h2 id="contact-h" class="h2 m-reveal">Leave for the summer knowing who has the key.</h2>
+      <a class="num m-link" href="tel:+12395550147"><span class="sr">Call the sample number </span>(239) 555-0147</a><br>
+      <a class="mail m-link" href="mailto:hello@example.com?subject=A%20first%20walk-through">hello@example.com</a>
+      <p class="meta">[hours] · Naples, Florida</p>
+      <div class="plan-mail">
+        <h3>Or write it in a few taps</h3>
+        <fieldset><legend>Visits</legend><div class="opts">
+          <label><input type="radio" name="freq" value="every week" checked><span>Every week</span></label>
+          <label><input type="radio" name="freq" value="every two weeks"><span>Every two weeks</span></label>
+          <label><input type="radio" name="freq" value="not sure yet"><span>Not sure yet</span></label>
+        </div></fieldset>
+        <fieldset><legend>You leave in</legend><div class="opts">
+          <label><input type="radio" name="when" value="April" checked><span>April</span></label>
+          <label><input type="radio" name="when" value="May"><span>May</span></label>
+          <label><input type="radio" name="when" value="June"><span>June</span></label>
+          <label><input type="radio" name="when" value="another month"><span>Another month</span></label>
+        </div></fieldset>
+        <div class="go"><a class="btn m-press" data-mail href="mailto:hello@example.com?subject=A%20first%20walk-through">Open it in my email</a><p class="cap mute">Opens your own email app with the message written. Nothing is sent until you press send.</p></div>
+      </div>
+      <ol class="starts">
+        <li><b>01 · You call or write</b>Where the house is, when you leave, when you’re back.</li>
+        <li><b>02 · We walk it with you</b>Before you go, the route together, and what matters to you: a slow drain, a sticky window.</li>
+        <li><b>03 · In writing</b>Visit days, what each covers, who to call in an emergency, your storm plan.</li>
+      </ol>
+      <p class="fiction">This is a concept site. The number is from the 555-0100 to 555-0199 range and the address is at example.com, both kept for fiction, so the call and the email behave like the real thing but reach no one.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="kick k">Tidelatch Home Watch</p>
+  <a class="big m-link" href="#contact">Book a first walk-through</a>
+  <nav aria-label="Footer"><a class="m-link" href="#walk">The walk-through</a><a class="m-link" href="#how">How a visit works</a><a class="m-link" href="#report">A visit report</a><a class="m-link" href="#services">Services</a></nav>
+  <p class="sample" id="about-sample">A concept site. Tidelatch Home Watch is a made-up business, and this page is a sample made by Marlon Jimenez, web designer in Naples, Florida, to show his work. The phone number, email, prices, address, insurance and hours are placeholders.</p>
+  <p class="fine">The three films (the canal at sunrise, the palm-lined street, the canal behind the house) are AI-generated footage made on Artlist; they show no real house, street or client. The house plan is drawn for this page. Its fonts are stored with the page. Built to work with a keyboard, a screen reader and reduced motion; not yet tested by a person using a screen reader.</p>
+  <div class="legal"><span>Concept site · © 2026 Marlon Jimenez</span><span>This page sets no cookies of its own and has no analytics.</span></div>
+</footer>
+<div class="bar"><a class="btn line m-press" href="tel:+12395550147"><span class="sr">Call the sample number</span><span aria-hidden="true">Call</span></a><a class="btn m-press" href="#contact">Book a first walk-through</a></div>
+</body>
+</html>

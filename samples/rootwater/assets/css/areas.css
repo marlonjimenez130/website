@@ -1,0 +1,23 @@
+/* Rootwater Plumbing Co. · service areas: the map that follows the town you read (P6: loaded only on its own page, after site.css and pages.css) */
+/* service areas: the sketch map, sticky on desktop */
+.areas__grid{display:grid;gap:clamp(28px,5vw,72px)}
+.areas__grid>*{min-width:0}
+.areas__towns{display:grid;gap:clamp(40px,5vw,64px)}
+.town h2{font:400 var(--t-2)/1 var(--f-display);color:var(--ink)}
+.town h3{font:400 clamp(1.5rem,1.2rem + 1vw,2rem)/1.1 var(--f-display);color:var(--ink)}
+.town p{margin-top:14px;color:var(--muted);max-width:40em}
+.town{scroll-margin-top:110px}
+@media (min-width:900px){.areas__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.areas__map{position:sticky;top:96px}}
+/* A10: on desktop the sticky map follows the town you're reading: its point lights and its route from Naples draws in.
+   Without JavaScript, on phones and before any town is in view, every point and route shows (the finished map). */
+.map__draw{fill:none;stroke:#fff;stroke-width:12;stroke-linecap:round;stroke-dasharray:1 2;stroke-dashoffset:0}
+.js .map--tour .map__route{clip-path:none;transition:none}
+.map__halo{fill:none;stroke:var(--copper-hi);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);transition:opacity .5s cubic-bezier(.19,1,.22,1),transform 1.3s cubic-bezier(.19,1,.22,1)}
+.map__now{color:var(--cream)}
+@media (min-width:900px){
+  .js .map--tour[data-town] .map__towns g:not(.home){opacity:.38;transition-delay:0s}
+  .js .map--tour[data-town] .map__draw{stroke-dashoffset:1;transition:stroke-dashoffset 1.3s cubic-bezier(.19,1,.22,1)}
+  .js .map--tour[data-town="naples"] .map__towns g[data-town="naples"],.js .map--tour[data-town="marco-island"] .map__towns g[data-town="marco-island"],.js .map--tour[data-town="bonita-springs"] .map__towns g[data-town="bonita-springs"],.js .map--tour[data-town="estero"] .map__towns g[data-town="estero"]{opacity:1}
+  .js .map--tour[data-town="naples"] #mk-naples .map__draw,.js .map--tour[data-town="marco-island"] #mk-marco-island .map__draw,.js .map--tour[data-town="bonita-springs"] #mk-bonita-springs .map__draw,.js .map--tour[data-town="estero"] #mk-estero .map__draw{stroke-dashoffset:0}
+  .js .map--tour[data-town="naples"] [data-town="naples"] .map__halo,.js .map--tour[data-town="marco-island"] [data-town="marco-island"] .map__halo,.js .map--tour[data-town="bonita-springs"] [data-town="bonita-springs"] .map__halo,.js .map--tour[data-town="estero"] [data-town="estero"] .map__halo{opacity:.85;transform:none}
+}

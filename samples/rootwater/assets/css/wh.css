@@ -1,0 +1,15 @@
+/* Rootwater Plumbing Co. · water heaters: inside the tank (P6: loaded only on its own page, after site.css and pages.css) */
+/* water heater: inside the tank */
+.fig--tank{view-timeline-name:--wh;max-width:440px;justify-self:center}
+.wh-sed{transform-box:fill-box;transform-origin:50% 100%}
+.wh-anode{transform-box:fill-box;transform-origin:50% 0}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .wh-sed{animation:grow-up linear both;animation-timeline:--wh;animation-range:entry 50% cover 55%}
+    .wh-anode{animation:thin linear both;animation-timeline:--wh;animation-range:entry 50% cover 55%}
+    .wh-pop{animation:fade-in linear both;animation-timeline:--wh;animation-range:cover 45% cover 55%}
+    .wh-label{animation:fade-in linear both;animation-timeline:--wh;animation-range:cover 50% cover 60%}
+  }
+}
+@keyframes grow-up{from{transform:scaleY(.15)}}
+@keyframes thin{from{transform:scaleX(1.9)}}
