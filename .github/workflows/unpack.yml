@@ -1,0 +1,21 @@
+# Unpacks any .zip uploaded to the top of this repository into the site, then removes the zip.
+name: Unpack uploaded zip
+on: push
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack
+        run: |
+          shopt -s nullglob
+          zips=(*.zip)
+          if [ ${#zips[@]} -eq 0 ]; then echo "No zip to unpack."; exit 0; fi
+          for z in "${zips[@]}"; do unzip -o -q "$z"; rm "$z"; done
+          git config user.name "Marlon Jimenez"
+          git config user.email "marlonjimenez130@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publish the website"
+          git push
